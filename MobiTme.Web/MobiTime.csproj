@@ -240,6 +240,7 @@
     <Compile Include="Functions\Authentication.cs" />
     <Compile Include="Functions\AuthManager.cs" />
     <Compile Include="Functions\Emails.cs" />
+    <Compile Include="Functions\LocalStorage\Countries.cs" />
     <Compile Include="Functions\MapIcon.cs" />
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

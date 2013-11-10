@@ -86,10 +86,10 @@ namespace MobiTme.Web.Member.Tiles.Employee
                     tbCostCentre.Items.Add(new ListItem("Select cost centre", ""));
                     foreach (var costCenter in listCostCentres)
                     {
-                        tbCostCentre.Items.Add(new ListItem(costCenter.CostCentre, costCenter.CostCentreID)); 
+                        tbCostCentre.Items.Add(new ListItem(costCenter.CostCentre, costCenter.CostCentreID));
                     }
- 
- 
+
+
                     tbSupervisor.Items.Add(new ListItem("Select supervisor", ""));
                     foreach (var supervisor in listSupervisors)
                     {
@@ -107,7 +107,7 @@ namespace MobiTme.Web.Member.Tiles.Employee
                     tbDepartment.Items.Add(new ListItem("Select department", ""));
                     foreach (var department in listDepartments)
                     {
-                        tbDepartment.Items.Add(new ListItem(department.Department, department.DepartmentID)); 
+                        tbDepartment.Items.Add(new ListItem(department.Department, department.DepartmentID));
                     }
 
 
@@ -116,7 +116,7 @@ namespace MobiTme.Web.Member.Tiles.Employee
                     {
                         tbShiftPattern.Items.Add(new ListItem(shiftPattern.ShiftPattern, shiftPattern.ShiftPatternID));
                     }
-  
+
                 }
             }
 
@@ -256,6 +256,7 @@ namespace MobiTme.Web.Member.Tiles.Employee
         {
             StringBuilder sbResult = new StringBuilder();
             var ListEmployees = new List<MobiTime.ReturnData.ReturnEmployeeData>();
+            var ListCountries = MobiTme.Web.Functions.LocalStorage.Countries.GetCountries();
 
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             var wsEmployees = new Employees();
@@ -269,7 +270,12 @@ namespace MobiTme.Web.Member.Tiles.Employee
                 sbResult.Append("<td>" + employeeData.Surname + "</td>");
                 sbResult.Append("<td>" + employeeData.FirstNames + "</td>");
                 sbResult.Append("<td>" + employeeData.Title + "</td>");
-                sbResult.Append("<td>" + employeeData.Country_OfBirth + "</td>");
+                if (ListCountries.ContainsKey(employeeData.Country_OfBirth))
+                {
+                    sbResult.Append("<td>" + ListCountries[employeeData.Country_OfBirth] + "</td>");
+                }
+                else
+                    sbResult.Append("<td></td>");
                 sbResult.Append("<td>" + employeeData.IdentityNumber + "</td>");
                 sbResult.Append("<td>" + employeeData.IdentityNumberType + "</td>");
                 sbResult.Append("<td>" + employeeData.Telephone + "</td>");
