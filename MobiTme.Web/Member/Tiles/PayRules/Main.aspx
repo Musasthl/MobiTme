@@ -923,7 +923,7 @@
 
                 </li>
 
-                <li class="liDetail" onclick="showDivDetail(2)">
+                <li class="liDetail" onclick="showDivDetail(8)">
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
@@ -972,7 +972,7 @@
 
     </form>
 
-    <div id="dlgPayRate" date-ispph="false" data-ispayrate="true">
+    <div id="dlgPayRate" date-ispph="false" data-ispayrate="true" style="display: none;">
         <div class="title" style="color: #222222; font-weight: bold; background: #0095DA; padding: 5px;">
             Normal Working Day Pay Rate
         </div>
