@@ -816,14 +816,7 @@
                         </table>
                     </div>
                 </div>
-                <div id="divDetail8" class="divDetail">
-                    <div>
-                        <h1>Automated Deduction Detail</h1>
-                    </div>
-                    <div style="padding-left: 10px;">
-                        <div>{ADD DEDUCTION DIV HERE}</div>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div id="layout_left">
@@ -923,15 +916,6 @@
 
                 </li>
 
-                <li class="liDetail" onclick="showDivDetail(8)">
-
-                    <a href="javascript:;">
-                        <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Automated Deduction Detail</span>
-                        <span class="arrow "></span>
-                    </a>
-
-                </li>
 
                 <li id="liSave" onclick="saveData()">
 
