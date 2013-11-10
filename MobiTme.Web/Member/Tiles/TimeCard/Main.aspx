@@ -83,7 +83,7 @@
                 var val = $(this).val();
                 var parent = $(this).parent().parent();
                 var keyID = parent.attr('key');
-                var lineID = parent.find('.shiftCycleDropdown').val();
+                var lineID = parent.find('.TypeDropdown').val();
                 var siteID = SITE_ID;
                 var empID = $("#HiddenFieldKey").val();
                 $.ajax({
@@ -117,7 +117,7 @@
                 var val = $(this).val();
                 var parent = $(this).parent().parent();
                 var keyID = parent.attr('key');
-                var lineID = parent.find('.shiftCycleDropdown').val();
+                var lineID = parent.find('.TypeDropdown').val();
                 var siteID = SITE_ID;
                 var empID = $("#HiddenFieldKey").val();
                 $.ajax({
@@ -151,7 +151,7 @@
                 var val = $(this).val();
                 var parent = $(this).parent().parent();
                 var keyID = parent.attr('key');
-                var lineID = parent.find('.shiftCycleDropdown').val();
+                var lineID = parent.find('.TypeDropdown').val();
                 var siteID = SITE_ID;
                 var empID = $("#HiddenFieldKey").val();
                 $.ajax({
@@ -183,7 +183,7 @@
                 var val = $(this).val();
                 var parent = $(this).parent().parent();
                 var keyID = parent.attr('key');
-                var lineID = parent.find('.shiftCycleDropdown').val();
+                var lineID = parent.find('.TypeDropdown').val();
                 var siteID = SITE_ID;
                 var empID = $("#HiddenFieldKey").val();
                 $.ajax({
@@ -215,7 +215,7 @@
                 var val = $(this).val();
                 var parent = $(this).parent().parent();
                 var keyID = parent.attr('key');
-                var lineID = parent.find('.shiftCycleDropdown').val();
+                var lineID = parent.find('.TypeDropdown').val();
                 var siteID = SITE_ID;
                 var empID = $("#HiddenFieldKey").val();
                 $.ajax({

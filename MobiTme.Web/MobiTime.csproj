@@ -185,6 +185,7 @@
     <Content Include="Styles\style_global.css" />
     <Content Include="WebServices\ClearShiftRules.asmx" />
     <Content Include="WebServices\Clients.asmx" />
+    <Content Include="WebServices\Clockings.asmx" />
     <Content Include="WebServices\CostCentres.asmx" />
     <Content Include="WebServices\Departments.asmx" />
     <Content Include="WebServices\Employees.asmx" />
@@ -424,6 +425,10 @@
     </Compile>
     <Compile Include="WebServices\Clients.asmx.cs">
       <DependentUpon>Clients.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Clockings.asmx.cs">
+      <DependentUpon>Clockings.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\CostCentres.asmx.cs">

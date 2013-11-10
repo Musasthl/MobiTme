@@ -23,10 +23,14 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         [System.Web.Services.WebMethod]
         public static string UpdateShiftCycle(string siteID, string empID, string lineID, string keyID, string val)
         {
+            int ClientID = 1;
             // Type = lineID
             bool bResult = false;
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
-
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            var wsService = new MobiTime.WebServices.Clockings();
+            bResult = wsService.UpdateGrouping(ApplicationPassword, ClientID, int.Parse(siteID), UserGuid, int.Parse(lineID), 5,
+                                      int.Parse(val), int.Parse(keyID));
             //var listCostCentres = new MobiTime.WebServices.OvertimeAdjustments().Update()
 
             return bResult.ToString();
@@ -34,9 +38,16 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         [System.Web.Services.WebMethod]
         public static string UpdateTimeSuperVisor(string siteID, string empID, string lineID, string keyID, string val)
         {
+            int ClientID = 1;
             // Type = lineID
             bool bResult = false;
+           
+
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            var wsService = new MobiTime.WebServices.Clockings();
+            bResult = wsService.UpdateGrouping(ApplicationPassword, ClientID, int.Parse(siteID), UserGuid, int.Parse(lineID), 3,
+                                      int.Parse(val), int.Parse(keyID));
 
             return bResult.ToString();
         }
@@ -44,17 +55,28 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         [System.Web.Services.WebMethod]
         public static string UpdateTimeDepartment(string siteID, string empID, string lineID, string keyID, string val)
         {
+            int ClientID = 1;
             bool bResult = false;
-            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            var wsService = new MobiTime.WebServices.Clockings();
+            bResult = wsService.UpdateGrouping(ApplicationPassword, ClientID, int.Parse(siteID), UserGuid, int.Parse(lineID), 2,
+                                      int.Parse(val), int.Parse(keyID));
             return bResult.ToString();
         }
 
         [System.Web.Services.WebMethod]
         public static string UpdateTimeCardCostCentre(string siteID, string empID, string lineID, string keyID, string val)
         {
+            int ClientID = 1;
             bool bResult = false;
+
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            var wsService = new MobiTime.WebServices.Clockings();
+            bResult = wsService.UpdateGrouping(ApplicationPassword, ClientID, int.Parse(siteID), UserGuid, int.Parse(lineID), 1,
+                                      int.Parse(val), int.Parse(keyID));
 
             return bResult.ToString();
         }
@@ -63,9 +85,14 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         [System.Web.Services.WebMethod]
         public static string UpdateTimeCardPosition(string siteID, string empID, string lineID, string keyID, string val)
         {
+            int ClientID = 1;
             bool bResult = false;
+           
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
-
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            var wsService = new MobiTime.WebServices.Clockings();
+            bResult = wsService.UpdateGrouping(ApplicationPassword, ClientID, int.Parse(siteID), UserGuid, int.Parse(lineID), 4,
+                                      int.Parse(val), int.Parse(keyID));
             return bResult.ToString();
         }
         [System.Web.Services.WebMethod]
@@ -136,14 +163,12 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
 
             Dictionary<string, string> shiftCycle = new Dictionary<string, string>()
             {
-	            {"1", "This line only"},
-	            {"2", "This shift day"},
-	            {"3", "From this liine"} 
+	            {"1", "This Clocking Record"},
+	            {"2", "This Shift Date"},
+	            {"3", "From this line"} 
 	        };
 
-
-
-            sbInnerHtmlShiftCycle.Append("<select class='shiftCycleDropdown'>");
+            sbInnerHtmlShiftCycle.Append("<select class='TypeDropdown'>");
             foreach (var VARIABLE in shiftCycle)
             {
 
@@ -241,7 +266,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("<select class='shiftCycleDropdown'>");
                     foreach (var VARIABLE in listShiftCycle)
                     {
-                        if (VARIABLE.ShiftPatternID == timeCardData.ShiftPattern)
+                        if (VARIABLE.ShiftPattern == timeCardData.ShiftPattern)
                         {
                             sbInnerHtml.Append("<option value='" + VARIABLE.ShiftPatternID + "' selected>");
                         }
@@ -263,7 +288,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("<select class='costCentreDropdown'>");
                     foreach (var VARIABLE in listCostCentres)
                     {
-                        if (VARIABLE.CostCentreID == timeCardData.CostCentre)
+                        if (VARIABLE.CostCentre == timeCardData.CostCentre)
                         {
                             sbInnerHtml.Append("<option value='" + VARIABLE.CostCentreID + "' selected>");
                         }
@@ -284,7 +309,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("<select class='departmentDropdown'>");
                     foreach (var VARIABLE in listDepartments)
                     {
-                        if (VARIABLE.DepartmentID == timeCardData.Department)
+                        if (VARIABLE.Department == timeCardData.Department)
                         {
                             sbInnerHtml.Append("<option value='" + VARIABLE.DepartmentID + "' selected>");
                         }
@@ -305,7 +330,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("<select class='supervisorDropdown'>");
                     foreach (var VARIABLE in listSupervisors)
                     {
-                        if (VARIABLE.SupervisorID == timeCardData.Supervisor)
+                        if (VARIABLE.Supervisor == timeCardData.Supervisor)
                         {
                             sbInnerHtml.Append("<option value='" + VARIABLE.SupervisorID + "' selected>");
                         }
@@ -328,7 +353,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("<select class='positionDropdown'>");
                     foreach (var VARIABLE in listPositions)
                     {
-                        if (VARIABLE.PositionID == timeCardData.Position)
+                        if (VARIABLE.Position == timeCardData.Position)
                         {
                             sbInnerHtml.Append("<option value='" + VARIABLE.PositionID + "' selected>");
                         }
