@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiTime", "MobiTme.Web\MobiTime.csproj", "{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiTime.Library", "MobiTime.Library\MobiTime.Library.csproj", "{7AAF2F76-051A-4C59-A51E-3E75F17F0247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAF2F76-051A-4C59-A51E-3E75F17F0247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAF2F76-051A-4C59-A51E-3E75F17F0247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAF2F76-051A-4C59-A51E-3E75F17F0247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAF2F76-051A-4C59-A51E-3E75F17F0247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

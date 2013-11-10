@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD8468E1-43EA-4259-89E0-DBFCDBB951A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobiTme.Web</RootNamespace>
+    <AssemblyName>MobiTme.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Functions\bin\MobiTime.dll" />
+    <Content Include="Functions\bin\MobiTime.pdb" />
+    <Content Include="Index.aspx" />
+    <Content Include="Libraries\Net20\Newtonsoft.Json.dll" />
+    <Content Include="Libraries\Net20\Newtonsoft.Json.pdb" />
+    <Content Include="Libraries\Net20\Newtonsoft.Json.xml" />
+    <Content Include="Libraries\Net40\Newtonsoft.Json.dll" />
+    <Content Include="Libraries\Net40\Newtonsoft.Json.pdb" />
+    <Content Include="Libraries\Net40\Newtonsoft.Json.xml" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Member\GSEMap.aspx" />
+    <Content Include="Member\Metro.aspx" />
+    <Content Include="Member\MetroContent.aspx" />
+    <Content Include="Member\Scripts\map.js" />
+    <Content Include="Member\Scripts\menu.js" />
+    <Content Include="Member\Scripts\metro.js" />
+    <Content Include="Member\Styles\forms.css" />
+    <Content Include="Member\Styles\iscroll.js" />
+    <Content Include="Member\Styles\menu.js" />
+    <Content Include="Member\Styles\overthrow.js" />
+    <Content Include="Member\Styles\StyleSheet1.css" />
+    <Content Include="Member\Tiles\Clients\Controls\Menu.aspx" />
+    <Content Include="Member\Tiles\Clients\Main.aspx" />
+    <Content Include="Member\Tiles\CostCenters\Main.aspx" />
+    <Content Include="Member\Tiles\Departments\Main.aspx" />
+    <Content Include="Member\Tiles\Employee\Main.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\Deductions.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\PayAdjustments.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\PayRates.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\PayRounding.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\PayRule.aspx" />
+    <Content Include="Member\Tiles\PayRules\Iframes\ShiftAllowance.aspx" />
+    <Content Include="Member\Tiles\PayRules\Main.aspx" />
+    <Content Include="Member\Tiles\PayRules\Scripts\iframes-main.js" />
+    <Content Include="Member\Tiles\Positions\Main.aspx" />
+    <Content Include="Member\Tiles\ShiftPatterns\Main.aspx" />
+    <Content Include="Member\Tiles\Supervisors\Main.aspx" />
+    <Content Include="Member\Tiles\TimeCard\Main.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\fontawesome\less\bordered-pulled.less" />
+    <Content Include="Scripts\fontawesome\less\core.less" />
+    <Content Include="Scripts\fontawesome\less\fixed-width.less" />
+    <Content Include="Scripts\fontawesome\less\font-awesome.less" />
+    <Content Include="Scripts\fontawesome\less\icons.less" />
+    <Content Include="Scripts\fontawesome\less\larger.less" />
+    <Content Include="Scripts\fontawesome\less\list.less" />
+    <Content Include="Scripts\fontawesome\less\mixins.less" />
+    <Content Include="Scripts\fontawesome\less\path.less" />
+    <Content Include="Scripts\fontawesome\less\rotated-flipped.less" />
+    <Content Include="Scripts\fontawesome\less\spinning.less" />
+    <Content Include="Scripts\fontawesome\less\stacked.less" />
+    <Content Include="Scripts\fontawesome\less\variables.less" />
+    <Content Include="Scripts\fontawesome\scss\font-awesome.scss" />
+    <Content Include="Scripts\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\fontawesome\scss\_core.scss" />
+    <Content Include="Scripts\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="Scripts\fontawesome\scss\_icons.scss" />
+    <Content Include="Scripts\fontawesome\scss\_larger.scss" />
+    <Content Include="Scripts\fontawesome\scss\_list.scss" />
+    <Content Include="Scripts\fontawesome\scss\_mixins.scss" />
+    <Content Include="Scripts\fontawesome\scss\_path.scss" />
+    <Content Include="Scripts\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\fontawesome\scss\_spinning.scss" />
+    <Content Include="Scripts\fontawesome\scss\_stacked.scss" />
+    <Content Include="Scripts\fontawesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\ROCKETHOST.pubxml" />
+    <None Include="Scripts\jquery-2.0.3-vsdoc.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
+    <Content Include="Scripts\fontawesome\css\font-awesome.css" />
+    <Content Include="Scripts\fontawesome\css\font-awesome.min.css" />
+    <Content Include="Scripts\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.blockUI.min.js" />
+    <Content Include="Scripts\jquery.layout-latest.js" />
+    <Content Include="Scripts\jquery.timepicker\jquery-ui-sliderAccess.js" />
+    <Content Include="Scripts\jquery.timepicker\jquery-ui-timepicker-addon.css" />
+    <Content Include="Scripts\jquery.timepicker\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\jquery.touchSwipe.js" />
+    <Content Include="Scripts\jquery.touchSwipe.min.js" />
+    <Content Include="Scripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\metro_ui_css\css\modern-responsive.css" />
+    <Content Include="Scripts\metro_ui_css\css\modern.css" />
+    <Content Include="Scripts\metro_ui_css\css\theme-dark.css" />
+    <Content Include="Scripts\metro_ui_css\fonts\iconFont.svg" />
+    <Content Include="Scripts\metro_ui_css\fonts\license.txt" />
+    <Content Include="Scripts\metro_ui_css\javascript\accordion.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\buttonset.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\calendar.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\carousel.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\contextmenu.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\dialog.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\dropdown.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\input-control.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\pagecontrol.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\pagelist.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\rating.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\slider.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\start-menu.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\tile-drag.js" />
+    <Content Include="Scripts\metro_ui_css\javascript\tile-slider.js" />
+    <Content Include="Scripts\utilities.js" />
+    <Content Include="Styles\AppStore.css" />
+    <Content Include="Styles\bootstrap-responsive.min.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\style_global.css" />
+    <Content Include="WebServices\ClearShiftRules.asmx" />
+    <Content Include="WebServices\Clients.asmx" />
+    <Content Include="WebServices\CostCentres.asmx" />
+    <Content Include="WebServices\Departments.asmx" />
+    <Content Include="WebServices\Employees.asmx" />
+    <Content Include="WebServices\InboundClocking.asmx" />
+    <Content Include="WebServices\OvertimeAdjustments.asmx" />
+    <Content Include="WebServices\PayBrackets.asmx" />
+    <Content Include="WebServices\PayRates.asmx" />
+    <Content Include="WebServices\PayRules.asmx" />
+    <Content Include="WebServices\PaySchedules.asmx" />
+    <Content Include="WebServices\PayTypes.asmx" />
+    <Content Include="WebServices\Positions.asmx" />
+    <Content Include="WebServices\ProcessClockings.asmx" />
+    <Content Include="WebServices\ProcessTimesheet.asmx" />
+    <Content Include="WebServices\ResetDatabase.asmx" />
+    <Content Include="WebServices\SendEmail.asmx" />
+    <Content Include="WebServices\ShiftPatternDays.asmx" />
+    <Content Include="WebServices\ShiftPatterns.asmx" />
+    <Content Include="WebServices\Sites.asmx" />
+    <Content Include="WebServices\Supervisors.asmx" />
+    <Content Include="WebServices\Terminals.asmx" />
+    <Content Include="WebServices\Timesheets.asmx" />
+    <Content Include="WebServices\UserLogin.asmx" />
+    <Content Include="wucLogin.ascx" />
+    <Content Include="RenderPage.ashx" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery.mobile\images\ajax-loader.gif" />
+    <Content Include="Scripts\jquery.mobile\images\icons-18-black.png" />
+    <Content Include="Scripts\jquery.mobile\images\icons-18-white.png" />
+    <Content Include="Scripts\jquery.mobile\images\icons-36-black.png" />
+    <Content Include="Scripts\jquery.mobile\images\icons-36-white.png" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile-1.3.2.css" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile-1.3.2.js" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile-1.3.2.min.css" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile-1.3.2.min.js" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile.structure-1.3.2.css" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile.structure-1.3.2.min.css" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile.theme-1.3.2.css" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile.theme-1.3.2.min.css" />
+    <Content Include="Styles\Custom_Global.css" />
+    <Content Include="Styles\GSEMap.css" />
+    <Content Include="Styles\Images\MobiTime.jpg" />
+    <Content Include="Styles\Images\welcome.png" />
+    <Content Include="Styles\Login.css" />
+    <Content Include="Styles\MetroMenu.css" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Scripts\jquery.mobile\jquery.mobile-1.3.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Functions\AuditTrails.cs" />
+    <Compile Include="Functions\Authentication.cs" />
+    <Compile Include="Functions\Emails.cs" />
+    <Compile Include="Functions\MapIcon.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\GSEMap.aspx.cs">
+      <DependentUpon>GSEMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\GSEMap.aspx.designer.cs">
+      <DependentUpon>GSEMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Metro.aspx.cs">
+      <DependentUpon>Metro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Metro.aspx.designer.cs">
+      <DependentUpon>Metro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MetroContent.aspx.cs">
+      <DependentUpon>MetroContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\MetroContent.aspx.designer.cs">
+      <DependentUpon>MetroContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Clients\Controls\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Clients\Controls\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Clients\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Clients\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\CostCenters\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\CostCenters\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Departments\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Departments\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Employee\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Employee\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\Deductions.aspx.cs">
+      <DependentUpon>Deductions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\Deductions.aspx.designer.cs">
+      <DependentUpon>Deductions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayAdjustments.aspx.cs">
+      <DependentUpon>PayAdjustments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayAdjustments.aspx.designer.cs">
+      <DependentUpon>PayAdjustments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRates.aspx.cs">
+      <DependentUpon>PayRates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRates.aspx.designer.cs">
+      <DependentUpon>PayRates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRounding.aspx.cs">
+      <DependentUpon>PayRounding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRounding.aspx.designer.cs">
+      <DependentUpon>PayRounding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRule.aspx.cs">
+      <DependentUpon>PayRule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\PayRule.aspx.designer.cs">
+      <DependentUpon>PayRule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\ShiftAllowance.aspx.cs">
+      <DependentUpon>ShiftAllowance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Iframes\ShiftAllowance.aspx.designer.cs">
+      <DependentUpon>ShiftAllowance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\PayRules\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Positions\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Positions\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\ShiftPatterns\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\ShiftPatterns\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\Supervisors\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\Supervisors\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Tiles\TimeCard\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\TimeCard\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderPage.ashx.cs">
+      <DependentUpon>RenderPage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnData\ReturnClients.cs" />
+    <Compile Include="ReturnData\ReturnCostCentres.cs" />
+    <Compile Include="ReturnData\ReturnDepartments.cs" />
+    <Compile Include="ReturnData\ReturnEmployees.cs" />
+    <Compile Include="ReturnData\ReturnOvertimeAdjustments.cs" />
+    <Compile Include="ReturnData\ReturnPayBrackets.cs" />
+    <Compile Include="ReturnData\ReturnPayRates.cs" />
+    <Compile Include="ReturnData\ReturnPayRules.cs" />
+    <Compile Include="ReturnData\ReturnPaySchedules.cs" />
+    <Compile Include="ReturnData\ReturnPayTypes.cs" />
+    <Compile Include="ReturnData\ReturnPositions.cs" />
+    <Compile Include="ReturnData\ReturnShiftPatternDays.cs" />
+    <Compile Include="ReturnData\ReturnShiftPatterns.cs" />
+    <Compile Include="ReturnData\ReturnSites.cs" />
+    <Compile Include="ReturnData\ReturnSupervisors.cs" />
+    <Compile Include="ReturnData\ReturnTerminals.cs" />
+    <Compile Include="ReturnData\ReturnTimesheets.cs" />
+    <Compile Include="ReturnData\ReturnUserSites.cs" />
+    <Compile Include="WebServices\ClearShiftRules.asmx.cs">
+      <DependentUpon>ClearShiftRules.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Clients.asmx.cs">
+      <DependentUpon>Clients.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\CostCentres.asmx.cs">
+      <DependentUpon>CostCentres.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Departments.asmx.cs">
+      <DependentUpon>Departments.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Employees.asmx.cs">
+      <DependentUpon>Employees.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\InboundClocking.asmx.cs">
+      <DependentUpon>InboundClocking.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\OvertimeAdjustments.asmx.cs">
+      <DependentUpon>OvertimeAdjustments.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PayBrackets.asmx.cs">
+      <DependentUpon>PayBrackets.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PayRates.asmx.cs">
+      <DependentUpon>PayRates.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PayRules.asmx.cs">
+      <DependentUpon>PayRules.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PaySchedules.asmx.cs">
+      <DependentUpon>PaySchedules.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\PayTypes.asmx.cs">
+      <DependentUpon>PayTypes.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Positions.asmx.cs">
+      <DependentUpon>Positions.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\ProcessClockings.asmx.cs">
+      <DependentUpon>ProcessClockings.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\ProcessTimesheet.asmx.cs">
+      <DependentUpon>ProcessTimesheet.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\ResetDatabase.asmx.cs">
+      <DependentUpon>ResetDatabase.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\SendEmail.asmx.cs">
+      <DependentUpon>SendEmail.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\ShiftPatternDays.asmx.cs">
+      <DependentUpon>ShiftPatternDays.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\ShiftPatterns.asmx.cs">
+      <DependentUpon>ShiftPatterns.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Sites.asmx.cs">
+      <DependentUpon>Sites.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Supervisors.asmx.cs">
+      <DependentUpon>Supervisors.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Terminals.asmx.cs">
+      <DependentUpon>Terminals.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Timesheets.asmx.cs">
+      <DependentUpon>Timesheets.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\UserLogin.asmx.cs">
+      <DependentUpon>UserLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="wucLogin.ascx.cs">
+      <DependentUpon>wucLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucLogin.ascx.designer.cs">
+      <DependentUpon>wucLogin.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\metro_ui_css\fonts\iconFont.eot" />
+    <Content Include="Scripts\metro_ui_css\fonts\iconFont.ttf" />
+    <Content Include="Scripts\metro_ui_css\fonts\iconFont.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Member\Tiles\Clients\Iframes\" />
+    <Folder Include="Member\Tiles\Clients\Stripts\" />
+    <Folder Include="Styles\Images\controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobiTime.Library\MobiTime.Library.csproj">
+      <Project>{7aaf2f76-051a-4c59-a51e-3e75f17f0247}</Project>
+      <Name>MobiTime.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49945</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49777/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

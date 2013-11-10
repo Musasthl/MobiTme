@@ -1,0 +1,210 @@
+﻿/* CSS Document */
+ 
+html, body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	background-color: black;
+}
+img {
+	max-width: 100%;
+	width: auto 9;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	display: inline-block;
+	
+	
+}
+
+.metroMenu_button
+{
+	float:left;
+
+}
+.metro_button {
+	color: white;
+	margin-bottom: 20px;
+	margin-right: 10px;
+}
+.metro_button_content {
+	padding: 0px 5px;
+	background: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 100px;
+		cursor: pointer;
+}
+.metro_button_content .description {
+ 	position: relative;
+	 bottom: -15px;
+ 
+}
+.description {
+	font-size: 13px;
+	text-shadow: none;
+}
+h1, h2, h3, h4, h5, h6 {
+margin: 0px 0px 0px 0px;
+font-family: inherit;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;
+color: White;
+}
+.mb5 {
+margin-bottom: 5px;
+}
+.metro_button_content.numbers .description {
+text-transform: uppercase;
+}
+
+.big_icon a {
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: 5px;
+}
+.height_medium, .height_small {
+	height: 110px;
+}
+
+.width_small {
+	width: 110px;
+}
+
+.width_medium {
+	width: 220px;
+}
+/*light yellow */
+.color_1 {
+background-color: #F5B401 !important;
+}
+/*light green */
+.color_2 {
+background-color: #78BA00 !important;
+}
+/*light blue */
+.color_3 {
+background-color: #2572EB !important;
+}
+/*maroon */
+.color_4 {
+background-color: #AD103C !important;
+}
+/*brown */
+.color_5 {
+background-color: #643001 !important;
+}
+/*light */
+.color_6 {
+background-color: #AF1D00 !important;
+}
+/*pink */
+.color_7 {
+background-color: #C1004F !important;
+}
+/*purpul */
+.color_8 {
+background-color: #7301AD !important;
+}
+/*purpul light */
+.color_9 {
+background-color: #4516B3 !important;
+}
+/*sky blue */
+.color_10 {
+background-color: #006AC1 !important;
+}
+/*neavy blue */
+.color_11 {
+background-color: #008287 !important;
+}
+ 
+
+/* green */
+.color_12 {
+	background-color: #189800 !important;
+}
+ /* pale green */
+ .color_13 {
+background-color: #00C13F !important;
+}
+/*light orange */
+.color_14 {
+background-color: #FE971C !important;
+}
+/*red */
+.color_15 {
+background-color: #FF2E12 !important;
+}
+/*pink */
+.color_16 {
+background-color: #FF1D77 !important;
+}
+/*light purple */
+.color_17 {
+background-color: #A93FFE !important;
+}
+/*sky blue */
+.color_18 {
+background-color: #1FAEFF !important;
+}
+/*sky blue */
+.color_19 {
+background-color: #56C5FF !important;
+}
+
+.color_20 {
+background-color: #00D8CC !important;
+}
+/*lime */
+.color_21 {
+background-color: #90D000 !important;
+}
+
+/* yellow b */
+.color_22 {
+background-color: #E0B600 !important;
+}
+
+/* light pink */
+.color_23 {
+background-color: #FF77BD !important;
+}
+
+.color_24 {
+background-color: #01A5A5 !important;
+}
+
+/*sky blue */
+.color_24 {
+background-color: #01A5A5 !important;
+}
+/*orange */
+.color_25 {
+
+background-color: #D74F2A !important;
+}
+
+
+/*light purple */
+.color_26 {
+
+background-color: #6D609E !important;
+}
+.color_27 {
+
+background-color: #0095DA !important;
+}
+
+.ui-content, #ScrollMetroMenu, .ui-content, .ui-body-c {
+    background: black;
+}
