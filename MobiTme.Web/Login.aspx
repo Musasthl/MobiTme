@@ -6,21 +6,21 @@
 <head runat="server">
     <title></title>
 
-
+ 
     <script src="Scripts/jquery-2.0.3.min.js"></script>
     <link href="Styles/Login.css" rel="stylesheet" />
 
-
+ 
 
     <script type="text/javascript">
-
+      
 
         $(document).ready(function () {
             $('#btnLogin').click(function (e) {
                 login();
             });
         });
-
+ 
         function login() {
             var username = $('#txtUsername').val();
             var password = $('#txtPassword').val();
@@ -29,7 +29,7 @@
                 alert('Please enter username.');
                 return;
             }
-
+            
             if (password.trim() == '') {
                 alert('Please enter password.');
                 return;
@@ -42,7 +42,7 @@
                 data: "{ 'username': '" + username + "', 'password':'" + password + "' , 'rememberMe':'" + rememberMe + "'}",
                 success: function (response) {
                     var data = response.d;
-
+       
                     if (data != null) {
                         if (data == "0") {
                             alert('wrong username or password')
@@ -58,25 +58,39 @@
                 }
             });
         }
-
+   
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
 
+        Login
+        <div id="dialog-message" title="Login failed">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 50px 0;"></span>
+                The password and email address you entered don't match. Remember that MobiTime passwords are case sensitive, so check your CAPS lock key.
+            </p>
 
+        </div>
         <div id="doc">
-
+            <div class="topbar js-topbar">
+                <div id="banners" class="js-banners"></div>
+                <div class="global-nav" data-section-term="top_nav">
+                    <div class="global-nav-inner">
+                        <div class="container"><span id="SpanError" style="color: Red;"></span></div>
+                    </div>
+                </div>
+            </div>
             <div id="page-outer">
                 <div class="front-container front-container-full-signup  " id="front-container">
                     <noscript>
         <div class="front-warning">
-          <h3> MobiTime makes heavy use of JavaScript</h3>
+          <h3> PowerUp makes heavy use of JavaScript</h3>
           <p> Please enable your browsers javascript.</p>
         </div>
         </noscript>
                     <div class="front-card">
-
+                        
                         <img src="Styles/Images/welcome.png" style="margin-left: -120px; padding-left: -120px; padding-top: 40px; margin-top: 40px;">
                         <div class="front-welcome">
                             <div class="front-welcome-text"></div>
