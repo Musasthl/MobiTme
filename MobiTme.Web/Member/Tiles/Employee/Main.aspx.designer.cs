@@ -73,7 +73,7 @@ namespace MobiTme.Web.Member.Tiles.Employee {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbCountry_OfBirth;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect tbCountry_OfBirth;
         
         /// <summary>
         /// tbIdentityNumber control.

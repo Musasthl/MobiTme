@@ -446,12 +446,12 @@ font-weight: bold;">Clocking</div>
                 <tr>
                     <td>Clocking ID</td>
                     <td>
-                        <input id="dlgClockingClockingID" type="text" value="" /></td>
+                        <input id="dlgClockingClockingID" type="text" value="" disabled="disabled" /></td>
                 </tr>
                 <tr>
                     <td>Original Clocking</td>
                     <td>
-                        <input id="dlgClockingOriginalClocking" type="text" value="" /></td>
+                        <input id="dlgClockingOriginalClocking" type="text" value="" disabled="disabled"  /></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -72,7 +72,6 @@ namespace MobiTime.WebServices
             int ShiftPatternID,
             DateTime TerminationDate,
             string UserGuid)
-
         {
             int EmployeeID = 0;
             bool InsertedEmployee = false;
@@ -168,7 +167,7 @@ namespace MobiTime.WebServices
                                                     "DeletedBy = null " +
                                                 "Where " +
                                                     "SiteID = " + SiteID + " " +
-                                                    "And EmployeeID = '" + EmployeeID +"'";
+                                                    "And EmployeeID = '" + EmployeeID + "'";
                             com.ExecuteNonQuery();
 
                             InsertedID = EmployeeID;
@@ -236,55 +235,55 @@ namespace MobiTime.WebServices
                                             "Output " +
                                                 "Inserted.EmployeeID " +
                                             "Select " +
-                                                "" + SiteID + ", " + 
-                                                "'" + Surname + "', " + 
-                                                "'" + FirstNames + "', " + 
-                                                "'" + Title + "', " + 
-                                                "'" + Country_OfBirth + "', " + 
-                                                "'" + IdentityNumber + "', " + 
-                                                "'" + IdentityNumberType + "', " + 
-                                                "'" + Telephone + "', " + 
-                                                "'" + Facsimile + "', " + 
-                                                "'" + Cellular + "', " + 
-                                                "'" + Email + "', " + 
-                                                "'" + Physical01 + "', " + 
-                                                "'" + Physical02 + "', " + 
-                                                "'" + Physical03 + "', " + 
-                                                "'" + Physical04 + "', " + 
-                                                "'" + Country_Physical + "', " + 
-                                                "'" + PhysicalCode + "', " + 
-                                                "'" + Postal01 + "', " + 
-                                                "'" + Postal02 + "', " + 
-                                                "'" + Postal03 + "', " + 
-                                                "'" + Postal04 + "', " + 
-                                                "'" + Country_Postal + "', " + 
-                                                "'" + PostalCode + "', " + 
-                                                "'" + Residential01 + "', " + 
-                                                "'" + Residential02 + "', " + 
-                                                "'" + Residential03 + "', " + 
-                                                "'" + Residential04 + "', " + 
-                                                "'" + Country_Residential + "', " + 
-                                                "'" + ResidentialCode + "', " + 
-                                                "'" + NOKSurname + "', " + 
-                                                "'" + NOKFirstNames + "', " + 
-                                                "'" + NOKTelephone + "', " + 
-                                                "'" + NOKCellular + "', " + 
-                                                "'" + NOKPhysical01 + "', " + 
-                                                "'" + NOKPhysical02 + "', " + 
-                                                "'" + NOKPhysical03 + "', " + 
-                                                "'" + NOKPhysical04 + "', " + 
-                                                "'" + Country_NOKPhysical + "', " + 
-                                                "'" + NOKPhysicalCode + "', " + 
-                                                "'" + EmployeeNumber + "', " + 
-                                                "'" + ClockingNumber + "', " + 
-                                                "'" + EngagementDate + "', " + 
-                                                "" + CostCentreID + ", " + 
-                                                "" + DepartmentID + ", " + 
-                                                "" + SupervisorID + ", " + 
-                                                "" + PositionID + ", " + 
-                                                "" + ShiftPatternID + ", " + 
-                                                "'" + TerminationDate + "', " + 
-                                                "'" + DateTime.UtcNow + "', " + 
+                                                "" + SiteID + ", " +
+                                                "'" + Surname + "', " +
+                                                "'" + FirstNames + "', " +
+                                                "'" + Title + "', " +
+                                                "'" + Country_OfBirth + "', " +
+                                                "'" + IdentityNumber + "', " +
+                                                "'" + IdentityNumberType + "', " +
+                                                "'" + Telephone + "', " +
+                                                "'" + Facsimile + "', " +
+                                                "'" + Cellular + "', " +
+                                                "'" + Email + "', " +
+                                                "'" + Physical01 + "', " +
+                                                "'" + Physical02 + "', " +
+                                                "'" + Physical03 + "', " +
+                                                "'" + Physical04 + "', " +
+                                                "'" + Country_Physical + "', " +
+                                                "'" + PhysicalCode + "', " +
+                                                "'" + Postal01 + "', " +
+                                                "'" + Postal02 + "', " +
+                                                "'" + Postal03 + "', " +
+                                                "'" + Postal04 + "', " +
+                                                "'" + Country_Postal + "', " +
+                                                "'" + PostalCode + "', " +
+                                                "'" + Residential01 + "', " +
+                                                "'" + Residential02 + "', " +
+                                                "'" + Residential03 + "', " +
+                                                "'" + Residential04 + "', " +
+                                                "'" + Country_Residential + "', " +
+                                                "'" + ResidentialCode + "', " +
+                                                "'" + NOKSurname + "', " +
+                                                "'" + NOKFirstNames + "', " +
+                                                "'" + NOKTelephone + "', " +
+                                                "'" + NOKCellular + "', " +
+                                                "'" + NOKPhysical01 + "', " +
+                                                "'" + NOKPhysical02 + "', " +
+                                                "'" + NOKPhysical03 + "', " +
+                                                "'" + NOKPhysical04 + "', " +
+                                                "'" + Country_NOKPhysical + "', " +
+                                                "'" + NOKPhysicalCode + "', " +
+                                                "'" + EmployeeNumber + "', " +
+                                                "'" + ClockingNumber + "', " +
+                                                "'" + EngagementDate + "', " +
+                                                "" + CostCentreID + ", " +
+                                                "" + DepartmentID + ", " +
+                                                "" + SupervisorID + ", " +
+                                                "" + PositionID + ", " +
+                                                "" + ShiftPatternID + ", " +
+                                                "'" + TerminationDate + "', " +
+                                                "'" + DateTime.UtcNow + "', " +
                                                 "'" + UserGuid + "'";
                         InsertedID = (int)com.ExecuteScalar();
                         InsertedEmployee = true;
@@ -385,15 +384,15 @@ namespace MobiTime.WebServices
                                             "emp.TerminationDate " +
                                         "From " +
                                             "Employees emp " +
-                                                "Left Outer Join CostCentres cst on emp.CostCentreID = cst.CostCentreID " + 
-                                                    "And emp.SiteID = cst.SiteID " + 
-                                                "Left Outer Join Departments dep on emp.DepartmentID = dep.DepartmentID " + 
-                                                    "And emp.SiteID = dep.SiteID " + 
-                                                "Left Outer Join Supervisors sup on emp.SupervisorID = sup.SupervisorID " + 
-                                                    "And emp.SiteID = sup.SiteID " + 
-                                                "Left Outer Join Positions pos on emp.PositionID = pos.PositionID " + 
-                                                    "And emp.SiteID = pos.SiteID " + 
-                                                "Left Outer Join ShiftPatterns spt on emp.ShiftPatternID = spt.ShiftPatternID " + 
+                                                "Left Outer Join CostCentres cst on emp.CostCentreID = cst.CostCentreID " +
+                                                    "And emp.SiteID = cst.SiteID " +
+                                                "Left Outer Join Departments dep on emp.DepartmentID = dep.DepartmentID " +
+                                                    "And emp.SiteID = dep.SiteID " +
+                                                "Left Outer Join Supervisors sup on emp.SupervisorID = sup.SupervisorID " +
+                                                    "And emp.SiteID = sup.SiteID " +
+                                                "Left Outer Join Positions pos on emp.PositionID = pos.PositionID " +
+                                                    "And emp.SiteID = pos.SiteID " +
+                                                "Left Outer Join ShiftPatterns spt on emp.ShiftPatternID = spt.ShiftPatternID " +
                                                     "And emp.SiteID = spt.SiteID " +
                                         "Where " +
                                             "emp.SiteID = " + SiteID + " " +
@@ -498,7 +497,7 @@ namespace MobiTime.WebServices
                     con.Open();
 
                     com.CommandText = "Select " +
-                                            "EmployeeID, " + 
+                                            "EmployeeID, " +
                                             "Surname, " +
                                             "FirstNames, " +
                                             "Title, " +
@@ -508,9 +507,11 @@ namespace MobiTime.WebServices
                                             "Telephone, " +
                                             "Facsimile, " +
                                             "Cellular, " +
+                                            "ClockingNumber, " +
+                                            "EmployeeNumber, " +
                                             "Email, " +
-                                            "EngagementDate, " + 
-                                            "TerminationDate " + 
+                                            "EngagementDate, " +
+                                            "TerminationDate " +
                                         "From " +
                                             "Employees " +
                                         "Where " +
@@ -537,6 +538,14 @@ namespace MobiTime.WebServices
                         DSReturnEmployees.Email = EmployeeList["Email"].ToString();
                         DSReturnEmployees.EngagementDate = EmployeeList["EngagementDate"].ToString();
                         DSReturnEmployees.TerminationDate = EmployeeList["TerminationDate"].ToString();
+
+
+                        DSReturnEmployees.EmployeeNumber = EmployeeList["EmployeeNumber"].ToString();
+                        DSReturnEmployees.ClockingNumber = EmployeeList["ClockingNumber"].ToString();
+
+
+
+
 
                         ReturnedEmployees.Add(DSReturnEmployees);
                     }
