@@ -65,12 +65,6 @@
     <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\chosen.css" />
     <Content Include="Index.aspx" />
-    <Content Include="Libraries\Net20\Newtonsoft.Json.dll" />
-    <Content Include="Libraries\Net20\Newtonsoft.Json.pdb" />
-    <Content Include="Libraries\Net20\Newtonsoft.Json.xml" />
-    <Content Include="Libraries\Net40\Newtonsoft.Json.dll" />
-    <Content Include="Libraries\Net40\Newtonsoft.Json.pdb" />
-    <Content Include="Libraries\Net40\Newtonsoft.Json.xml" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="Member\GSEMap.aspx" />
