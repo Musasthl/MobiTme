@@ -21,7 +21,7 @@ namespace MobiTme
         public static string LoginUser(string username, string password, bool rememberMe)
         {
             String userGuid =
-                (new UserLogin().Login(MobiTime.Library.Authentication.Manager.GetWebServiceKey(), username, password));
+                (new UserLogin().Login(MobiTme.Web.Functions.AuthManager.GetWebServiceKey(), username, password));
  
             if (userGuid != "0")
             {

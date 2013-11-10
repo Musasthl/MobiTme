@@ -32,7 +32,7 @@ namespace MobiTme.Member
         {
             UserLogin wsUserLogin = new UserLogin();
             List<MobiTime.ReturnData.ReturnUserSiteData> listUserSites = null;
-            listUserSites = wsUserLogin.ListUserSites(MobiTime.Library.Authentication.Manager.GetWebServiceKey(), MobiTime.Library.Authentication.Manager.GetCurrentUser());
+            listUserSites = wsUserLogin.ListUserSites(MobiTme.Web.Functions.AuthManager.GetWebServiceKey(), MobiTme.Web.Functions.AuthManager.GetCurrentUser());
 
 
             // listUserSites

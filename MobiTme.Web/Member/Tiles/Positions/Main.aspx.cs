@@ -43,8 +43,8 @@ namespace MobiTme.Member.Tiles.Positions
         {
             bool cmdStatus = false;
             var wsPositions = new MobiTime.WebServices.Positions();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsPositions.Insert(
                                         ApplicationPassword,
@@ -71,8 +71,8 @@ namespace MobiTme.Member.Tiles.Positions
         {
             bool cmdStatus = false;
             var wsPositions = new MobiTime.WebServices.Positions();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsPositions.Update(
                                ApplicationPassword,
@@ -104,7 +104,7 @@ namespace MobiTme.Member.Tiles.Positions
 
             var ListPosition = new List<MobiTime.ReturnData.ReturnPositionData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
 
             ListPosition = wsPosition.ListPositions(ApplicationPassword, int.Parse(siteID));
@@ -128,8 +128,8 @@ namespace MobiTme.Member.Tiles.Positions
         {
 
             var wsPositions = new MobiTime.WebServices.Positions();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             List<ReturnPositionData> dataResult = wsPositions.Select(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID));
             return JsonConvert.SerializeObject(dataResult);
@@ -140,8 +140,8 @@ namespace MobiTme.Member.Tiles.Positions
         {
 
             var wsPositions = new MobiTime.WebServices.Positions();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return wsPositions.Delete(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID), UserGuid).ToString();
 

@@ -34,8 +34,8 @@ namespace MobiTme.Member.Tiles.CostCenters
         {
             bool cmdStatus = false;
             var wsCostCenters = new MobiTime.WebServices.CostCentres();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsCostCenters.Insert(
              ApplicationPassword,
@@ -53,8 +53,8 @@ namespace MobiTme.Member.Tiles.CostCenters
         { 
     
             var wsCostCenters = new MobiTime.WebServices.CostCentres();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             List<MobiTime.ReturnData.ReturnCostCentreData> dataResult = wsCostCenters.Select(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID));
             return JsonConvert.SerializeObject(dataResult);
@@ -64,8 +64,8 @@ namespace MobiTme.Member.Tiles.CostCenters
         public static string Delete(string SiteID, string KeyID)
         {
             var wsCostCenters = new MobiTime.WebServices.CostCentres();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return wsCostCenters.Delete(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID), UserGuid).ToString();
         }
@@ -75,8 +75,8 @@ namespace MobiTme.Member.Tiles.CostCenters
         {
             bool cmdStatus = false;
             var wsCostCenters = new MobiTime.WebServices.CostCentres();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsCostCenters.Update(
                   ApplicationPassword,
@@ -98,7 +98,7 @@ namespace MobiTme.Member.Tiles.CostCenters
 
             var ListCostCentres = new List<MobiTime.ReturnData.ReturnCostCentreData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             var wsCostCenters = new MobiTime.WebServices.CostCentres();
 
             ListCostCentres = wsCostCenters.ListCostCentres(ApplicationPassword, int.Parse(siteID));

@@ -30,8 +30,8 @@ namespace MobiTme.Web.Member.Tiles.ShiftPatterns
             shiftPattern.ClientID = "0";
             bool cmdStatus = false;
             var wsShiftPattern = new MobiTime.WebServices.ShiftPatterns();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsShiftPattern.Insert(
                   ApplicationPassword,
@@ -52,8 +52,8 @@ namespace MobiTme.Web.Member.Tiles.ShiftPatterns
             bool cmdStatus = false;
             shiftPattern.ClientID = "0";
             var wsShiftPatterns = new MobiTime.WebServices.ShiftPatterns();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsShiftPatterns.Update(
                   ApplicationPassword,
@@ -85,8 +85,8 @@ namespace MobiTme.Web.Member.Tiles.ShiftPatterns
 
 
             var wsShiftPatterns = new MobiTime.WebServices.ShiftPatterns();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             List<MobiTime.ReturnData.ReturnShiftPatternData> dataResult = wsShiftPatterns.Select(ApplicationPassword, int.Parse(SiteID), UserGuid, int.Parse(KeyID));
             return JsonConvert.SerializeObject(dataResult);
@@ -98,8 +98,8 @@ namespace MobiTme.Web.Member.Tiles.ShiftPatterns
             StringBuilder sbResult = new StringBuilder();
 
             var listData = new List<MobiTime.ReturnData.ReturnShiftPatternData>();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             var wsShiftPatterns = new MobiTime.WebServices.ShiftPatterns();
 
             listData = wsShiftPatterns.List(ApplicationPassword, int.Parse(siteID), UserGuid);

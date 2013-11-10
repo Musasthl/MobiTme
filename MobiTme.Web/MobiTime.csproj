@@ -246,6 +246,7 @@
   <ItemGroup>
     <Compile Include="Functions\AuditTrails.cs" />
     <Compile Include="Functions\Authentication.cs" />
+    <Compile Include="Functions\AuthManager.cs" />
     <Compile Include="Functions\Emails.cs" />
     <Compile Include="Functions\MapIcon.cs" />
     <Compile Include="Index.aspx.cs">
@@ -543,12 +544,6 @@
     <Folder Include="Member\Tiles\Clients\Iframes\" />
     <Folder Include="Member\Tiles\Clients\Stripts\" />
     <Folder Include="Styles\Images\controls\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MobiTime.Library\MobiTime.Library.csproj">
-      <Project>{7aaf2f76-051a-4c59-a51e-3e75f17f0247}</Project>
-      <Name>MobiTime.Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

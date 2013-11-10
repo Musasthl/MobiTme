@@ -34,8 +34,8 @@ namespace MobiTme.Member.Tiles.Supervisors
         {
             bool cmdStatus = false;
             var wsSupervisors = new MobiTime.WebServices.Supervisors();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
            
             cmdStatus = wsSupervisors.Insert(
              ApplicationPassword,
@@ -53,8 +53,8 @@ namespace MobiTme.Member.Tiles.Supervisors
         { 
     
             var wsSupervisor = new MobiTime.WebServices.Supervisors();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             List<MobiTime.ReturnData.ReturnSupervisorData> dataResult = wsSupervisor.Select(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID));
             return JsonConvert.SerializeObject(dataResult);
@@ -64,8 +64,8 @@ namespace MobiTme.Member.Tiles.Supervisors
         public static string Delete(string SiteID, string KeyID)
         {
             var wsSupervisor = new MobiTime.WebServices.Supervisors();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return wsSupervisor.Delete(ApplicationPassword, int.Parse(SiteID), int.Parse(KeyID), UserGuid).ToString();
         }
@@ -75,8 +75,8 @@ namespace MobiTme.Member.Tiles.Supervisors
         {
             bool cmdStatus = false;
             var wsCostCenters = new MobiTime.WebServices.Supervisors();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsCostCenters.Update(
                   ApplicationPassword,
@@ -98,7 +98,7 @@ namespace MobiTme.Member.Tiles.Supervisors
 
             var ListSupervisors = new List<MobiTime.ReturnData.ReturnSupervisorData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             var wsSupervisor = new MobiTime.WebServices.Supervisors();
 
             ListSupervisors = wsSupervisor.ListSupervisors(ApplicationPassword, int.Parse(siteID));

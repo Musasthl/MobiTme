@@ -25,7 +25,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         {
             // Type = lineID
             bool bResult = false;
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             //var listCostCentres = new MobiTime.WebServices.OvertimeAdjustments().Update()
 
@@ -36,7 +36,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         {
             // Type = lineID
             bool bResult = false;
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return bResult.ToString();
         }
@@ -45,7 +45,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         public static string UpdateTimeDepartment(string siteID, string empID, string lineID, string keyID, string val)
         {
             bool bResult = false;
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return bResult.ToString();
         }
@@ -54,7 +54,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         public static string UpdateTimeCardCostCentre(string siteID, string empID, string lineID, string keyID, string val)
         {
             bool bResult = false;
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return bResult.ToString();
         }
@@ -64,7 +64,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         public static string UpdateTimeCardPosition(string siteID, string empID, string lineID, string keyID, string val)
         {
             bool bResult = false;
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             return bResult.ToString();
         }
@@ -72,7 +72,7 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
         public static string EmployeeList(string siteID)
         {
             StringBuilder sbInnerHtml = new StringBuilder();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             using (var wsService = new Employees())
             {
                 foreach (var serviceData in wsService.ListEmployees(ApplicationPassword, int.Parse(siteID)))
@@ -122,8 +122,8 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
             int siteID = int.Parse(SiteID);
             StringBuilder sbInnerHtml = new StringBuilder();
             StringBuilder sbInnerHtmlShiftCycle = new StringBuilder();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
             var listDepartments = new Departments().ListDepartments(ApplicationPassword, siteID);
             var listPositions = new Positions().ListPositions(ApplicationPassword, siteID);
             var listCostCentres = new CostCentres().ListCostCentres(ApplicationPassword, siteID);

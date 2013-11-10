@@ -92,8 +92,8 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         {
 
             var wsPayRules = new MobiTime.WebServices.PayRules();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             List<MobiTime.ReturnData.ReturnPayRuleData> dataResult = wsPayRules.Select(ApplicationPassword, int.Parse(SiteID), UserGuid, int.Parse(KeyID));
             return JsonConvert.SerializeObject(dataResult);
@@ -103,11 +103,11 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         public static string ListPayRules(string siteID)
         {
             StringBuilder sbResult = new StringBuilder();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
+            string UserGuid =  MobiTme.Web.Functions.AuthManager.GetCurrentUser();
 
             var listData = new List<MobiTime.ReturnData.ReturnPayRuleData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
             var wsPayRules = new MobiTime.WebServices.PayRules();
 
             listData = wsPayRules.List(ApplicationPassword, int.Parse(siteID), UserGuid);
@@ -136,8 +136,8 @@ namespace MobiTme.Web.Member.Tiles.PayRules
             payRule.ClientID = "0";
             bool cmdStatus = false;
             var wsPayRules = new MobiTime.WebServices.PayRules();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
 
             cmdStatus = wsPayRules.Update(
@@ -169,8 +169,8 @@ namespace MobiTme.Web.Member.Tiles.PayRules
             bool cmdStatus = false;
             payRule.ClientID = "0";
             var wsPayRules = new MobiTime.WebServices.PayRules();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             cmdStatus = wsPayRules.Insert(
          ApplicationPassword,
@@ -196,11 +196,11 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         public static string ListPayRate(string siteID, string payRuleID)
         {
             StringBuilder sbResult = new StringBuilder();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
 
             var listData = new List<MobiTime.ReturnData.ReturnPayRateData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
 
             listData = new MobiTime.WebServices.PayRates().List(ApplicationPassword, int.Parse(siteID), UserGuid, int.Parse(payRuleID));
@@ -228,11 +228,11 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         public static string ListBrackets(string siteID, string payRuleID)
         {
             StringBuilder sbResult = new StringBuilder();
-            string UserGuid = MobiTime.Library.Authentication.Manager.GetCurrentUser();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
 
             var listData = new List<MobiTime.ReturnData.ReturnPayBracketData>();
 
-            string ApplicationPassword = MobiTime.Library.Authentication.Manager.GetWebServiceKey();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
 
             listData = new MobiTime.WebServices.PayBrackets().List(ApplicationPassword, int.Parse(siteID), UserGuid, int.Parse(payRuleID));
