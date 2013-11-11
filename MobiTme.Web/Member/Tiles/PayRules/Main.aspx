@@ -673,8 +673,8 @@
                             // var dateArray2 = PayRateTo.split(' ');
                             var FromTime = dateArray1[1].substring(0, 5) + " " + dateArray1[2];
                            
-                            if (FromTime.length == 8)
-                                FromTime = dateArray1[1].substring(0, 4) + " " + dateArray1[2];
+                            //if (FromTime.length == 8)
+                            //    FromTime = dateArray1[1].substring(0, 4) + " " + dateArray1[2];
 
                             var RowToUpdate = $("#payRateData > tr");
                             for (i = 0 ; i < RowToUpdate.length; i++) {
