@@ -53,9 +53,9 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
             for (int i = 0; i < 96; i++)
             {
-                sbHtml.Append("<tr id='pay-row" + i + "' class='pay-row'  data-time='" + dateTime.ToShortTimeString() + "' data-row='" + i + "'>");
+                sbHtml.Append("<tr id='pay-row" + i + "' class='pay-row'  data-time='" + dateTime.ToString("hh:mm tt") + "' data-row='" + i + "'>");
                 sbHtml.Append("<td class=\"hidden\"> </td>");
-                sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToShortTimeString() + "</td>");
+                sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToString("hh:mm tt") + "</td>");
                 sbHtml.Append("<td class='pay-normal' data-keyid=''></td>");
 
                 sbHtml.Append("<td class='pay-pph' data-keyid=''></td>");
@@ -74,9 +74,9 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
             for (int i = 0; i < 96; i++)
             {
-                sbHtml.Append("<tr id='shift-row" + i + "' class='shift-row' data-time='" + dateTime.ToShortTimeString() + "' data-row='" + i + "'>");
+                sbHtml.Append("<tr id='shift-row" + i + "' class='shift-row' data-time='" + dateTime.ToString("hh:mm tt") + "' data-row='" + i + "'>");
                 sbHtml.Append("<td class=\"hidden\"> </td>");
-                sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToShortTimeString() + "</td>");
+                sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToString("hh:mm tt") + "</td>");
                 sbHtml.Append("<td class='shift-normal'  data-keyid=''></td>");
 
                 sbHtml.Append("<td class='shift-pph' data-keyid=''></td>");
