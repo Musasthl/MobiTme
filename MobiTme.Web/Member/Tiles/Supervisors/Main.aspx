@@ -10,7 +10,7 @@
     <script src="../../../Scripts/jquery-2.0.3.min.js"></script>
     <script src="../../../Scripts/utilities.js"></script>
     <script type="text/javascript">
-        var LEFT_LAYOUT_SIZE = 271;
+        var LEFT_LAYOUT_SIZE = 275;
         var LEFT_LAYOUT_TITLE_SIZE = 100;
         var SITE_ID = 1;
         var layout_left_width;

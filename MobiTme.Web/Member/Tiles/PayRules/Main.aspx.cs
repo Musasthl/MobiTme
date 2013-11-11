@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -55,9 +56,9 @@ namespace MobiTme.Web.Member.Tiles.PayRules
                 sbHtml.Append("<tr id='pay-row" + i + "' class='pay-row'  data-time='" + dateTime.ToShortTimeString() + "' data-row='" + i + "'>");
                 sbHtml.Append("<td class=\"hidden\"> </td>");
                 sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToShortTimeString() + "</td>");
-                sbHtml.Append("<td class='pay-normal'></td>");
+                sbHtml.Append("<td class='pay-normal' data-keyid=''></td>");
 
-                sbHtml.Append("<td class='pay-pph'></td>");
+                sbHtml.Append("<td class='pay-pph' data-keyid=''></td>");
                 sbHtml.Append("</tr>");
                 dateTime = dateTime.AddMinutes(15);
             }
@@ -76,9 +77,9 @@ namespace MobiTme.Web.Member.Tiles.PayRules
                 sbHtml.Append("<tr id='shift-row" + i + "' class='shift-row' data-time='" + dateTime.ToShortTimeString() + "' data-row='" + i + "'>");
                 sbHtml.Append("<td class=\"hidden\"> </td>");
                 sbHtml.Append("<td style=\"width: 120px;\">" + dateTime.ToShortTimeString() + "</td>");
-                sbHtml.Append("<td class='shift-normal' ></td>");
+                sbHtml.Append("<td class='shift-normal'  data-keyid=''></td>");
 
-                sbHtml.Append("<td class='shift-pph'></td>");
+                sbHtml.Append("<td class='shift-pph' data-keyid=''></td>");
                 sbHtml.Append("</tr>");
                 dateTime = dateTime.AddMinutes(15);
             }
@@ -103,7 +104,7 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         public static string ListPayRules(string siteID)
         {
             StringBuilder sbResult = new StringBuilder();
-            string UserGuid =  MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
 
             var listData = new List<MobiTime.ReturnData.ReturnPayRuleData>();
 
@@ -256,6 +257,147 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
 
             return sbResult.ToString();
+        }
+
+
+        public class MyPayRate
+        {
+            public string PayRateID { get; set; }
+            public string SiteID { get; set; }
+            public string PayRuleID { get; set; }
+            public string PayType { get; set; }
+            public string PayRateFrom { get; set; }
+            public string PayRateTo { get; set; }
+        }
+
+
+
+        [System.Web.Services.WebMethod]
+        public static string payRateList(string SiteID, string PayRuleID)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PayRates();
+
+            List<MobiTime.ReturnData.ReturnPayRateData> dataResult = wsService.List(ApplicationPassword, int.Parse(SiteID), UserGuid,
+                              int.Parse(PayRuleID));
+            return JsonConvert.SerializeObject(dataResult);
+
+        }
+
+
+
+
+
+        [System.Web.Services.WebMethod]
+        public static string paySchedulesList(string SiteID, string PayRuleID)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PaySchedules();
+
+            List<MobiTime.ReturnData.ReturnPayScheduleData> dataResult = wsService.ListShiftAllowance(ApplicationPassword,
+                              int.Parse(PayRuleID));
+            return JsonConvert.SerializeObject(dataResult);
+
+        }
+
+        [System.Web.Services.WebMethod]
+        public static string insertPayRates(MyPayRate myyPayRate)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PayRates();
+            bool result = wsService.Insert(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid,
+                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("1900/01/01 " + myyPayRate.PayRateFrom),
+                               DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo));
+
+
+            return result.ToString();
+        }
+
+        [System.Web.Services.WebMethod]
+        public static string insertShiftPayRate(MyPayRate myyPayRate)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PaySchedules();
+            bool result = wsService.Insert(ApplicationPassword,
+                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("2013/01/01 " + myyPayRate.PayRateFrom),
+                               DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo), UserGuid);
+
+
+            return result.ToString();
+        }
+
+
+        [System.Web.Services.WebMethod]
+        public static string updatePayRates(MyPayRate myyPayRate)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PayRates();
+            bool result = wsService.Update(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid, int.Parse(myyPayRate.PayRateID),
+                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("2013/11/05 " + myyPayRate.PayRateFrom),
+                               DateTime.Parse("2013/11/05 " + myyPayRate.PayRateTo));
+
+
+            return result.ToString();
+        }
+
+
+        [System.Web.Services.WebMethod]
+        public static string deletePayRates(MyPayRate myyPayRate)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PayRates();
+            bool result = wsService.Delete(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid,
+                              int.Parse(myyPayRate.PayRuleID), int.Parse(myyPayRate.PayRateID));
+
+
+            return result.ToString();
+        }
+
+        public string insertShiftRate(MyPayRate myyPayRate)
+        {
+            //int ClientID = 1;
+
+            //string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            //string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            //var wsService = new MobiTime.WebServices.ShiftPatternDays();
+            //bool result = wsService.Insert(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid,
+            //                  int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse(myyPayRate.PayRateFrom),
+            //                  DateTime.Now);
+
+
+            return null;
         }
 
     }

@@ -17,7 +17,7 @@
     <script src="../../../Scripts/jquery.timepicker/jquery-ui-sliderAccess.js"></script>
     <script src="../../../Scripts/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
     <script type="text/javascript">
-        var LEFT_LAYOUT_SIZE = 271;
+        var LEFT_LAYOUT_SIZE = 275;
         var LEFT_LAYOUT_TITLE_SIZE = 40;
         var LEFT_LAYOUT_FOOTER_SIZE = 50;
         var SITE_ID = 1;

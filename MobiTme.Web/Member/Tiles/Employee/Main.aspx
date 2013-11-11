@@ -15,7 +15,7 @@
     <script src="../../../Scripts/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
     <link href="../../../Scripts/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
     <script type="text/javascript">
-        var LEFT_LAYOUT_SIZE = 271;
+        var LEFT_LAYOUT_SIZE = 275;
         var LEFT_LAYOUT_TITLE_SIZE = 100;
         var SITE_ID = 1;
         var layout_left_width;

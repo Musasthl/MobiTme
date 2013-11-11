@@ -26,7 +26,7 @@
 
 
     <script type="text/javascript">
-        var LEFT_LAYOUT_SIZE = 271;
+        var LEFT_LAYOUT_SIZE = 275;
         var LEFT_LAYOUT_TITLE_SIZE = 100;
         var SITE_ID = 1;
         var layout_left_width;
@@ -94,6 +94,9 @@
 
                 var selectedTime = selectedRow.attr("data-time");
 
+
+                $("#dlgPayRate").attr("data-selectedkey", $(selectedRow.children()[3]).attr("data-keyid"));
+
                 $("#dlgPayRate").attr("date-ispph", "true");
                 $("#dlgPayRate").attr("data-ispayrate", "true");
                 $("#dlgPayRate > .title").html("Public HoliDay Pay Rate");
@@ -110,6 +113,8 @@
 
 
                 var selectedTime = selectedRow.attr("data-time");
+
+                $("#dlgPayRate").attr("data-selectedkey", $(selectedRow.children()[2]).attr("data-keyid"));
 
                 $("#dlgPayRate").attr("date-ispph", "false");
                 $("#dlgPayRate").attr("data-ispayrate", "true");
@@ -130,6 +135,8 @@
 
                 var selectedTime = selectedRow.attr("data-time");
 
+                $("#dlgPayRate").attr("data-selectedkey", $(selectedRow.children()[3]).attr("data-keyid"));
+
                 $("#dlgPayRate").attr("date-ispph", "true");
                 $("#dlgPayRate").attr("data-ispayrate", "false");
                 $("#dlgPayRate > .title").html("Public HoliDay Pay Rate");
@@ -145,6 +152,8 @@
                 selectedRow.addClass('active');
 
                 var selectedTime = selectedRow.attr("data-time");
+
+                $("#dlgPayRate").attr("data-selectedkey", $(selectedRow.children()[2]).attr("data-keyid"));
 
                 $("#dlgPayRate").attr("date-ispph", "false");
                 $("#dlgPayRate").attr("data-ispayrate", "false");
@@ -164,23 +173,99 @@
                 var time = $("#tbPayStartTime").val();
                 var payRate = $("#cbPayRate").val();
 
+                var selectedKeyID = $("#dlgPayRate").attr("data-selectedkey");
                 if (isPayRate == "true") {
                     var updateRow = $("#payRateData >tr.pay-row[data-time='" + time + "']");
+
+
+
+
                     if (isPPH == "true") {
+                        //$(updateRow.children[2]).attr("data-keyid", "");
+                        //$(updateRow.children[3]).attr("data-keyid", "");
+
                         $(updateRow.children()[3]).html(payRate);
+                        if (selectedKeyID == "")
+                            insertPayRate(payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked at Rate " + payRate + " on PPH");
+                        else
+                            updatePayRate(selectedKeyID, payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked at Rate " + payRate + " on PPH");
+
                     } else {
                         $(updateRow.children()[2]).html(payRate);
+                        if (selectedKeyID == "")
+                            insertPayRate(payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked at Rate " + payRate);
+                        else
+                            updatePayRate(selectedKeyID, payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked at Rate " + payRate);
                     }
-                } else {
+
+
+                }
+                else {
                     var updateRow = $("#shiftAllawonceData >tr.shift-row[data-time='" + time + "']");
                     if (isPPH == "true") {
                         $(updateRow.children()[3]).html(payRate);
+                        if (selectedKeyID == "")
+                            insertShiftPayRate(payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked to SA " + payRate + " on PPH");
+                        else
+                            updateShiftPayRate(payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked to SA " + payRate + " on PPH");
+
+
                     } else {
                         $(updateRow.children()[2]).html(payRate);
+                        if (selectedKeyID == "")
+                            insertShiftPayRate(payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked to SA " + payRate);
+                        else
+                            updateShiftPayRate(payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked to SA " + payRate);
+
                     }
                 }
                 $.unblockUI();
             });
+
+
+
+            $("#dlgPayRateDelete").click(function () {
+                var isPPH = $("#dlgPayRate").attr("date-ispph");
+                var isPayRate = $("#dlgPayRate").attr("data-ispayrate");
+
+                var time = $("#tbPayStartTime").val();
+                var payRate = $("#cbPayRate").val();
+
+                if (isPayRate == "true") {
+                    var updateRow = $("#payRateData >tr.pay-row[data-time='" + time + "']");
+
+                    if ($("#dlgPayRate").attr("data-selectedkey") == "") {
+                        $.unblockUI();
+                        return;
+                    }
+                    deletePayRate($("#dlgPayRate").attr("data-selectedkey"));
+
+
+                    //if (isPPH == "true") {
+                    //    $(updateRow.children()[3]).html(payRate);
+                    //    insertPayRate(payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked at Rate " + payRate + " on PPH");
+                    //} else {
+                    //    $(updateRow.children()[2]).html(payRate);
+                    //    insertPayRate(payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked at Rate " + payRate);
+                    //}
+
+
+                }
+                else {
+                    var updateRow = $("#shiftAllawonceData >tr.shift-row[data-time='" + time + "']");
+
+                    //if (isPPH == "true") {
+                    //    $(updateRow.children()[3]).html(payRate);
+                    //    insertShiftPayRate(payRate, time, getLastCalendaTime(updateRow, true), "Pay Hours Worked to SA " + payRate + " on PPH");
+                    //} else {
+                    //    $(updateRow.children()[2]).html(payRate);
+                    //    insertShiftPayRate(payRate, time, getLastCalendaTime(updateRow, false), "Pay Hours Worked to SA " + payRate);
+                    //}
+                }
+                $.unblockUI();
+            });
+
+
 
             $("#dlgPayRatCancel").click(function () {
                 $.unblockUI();
@@ -190,7 +275,165 @@
         });
 
 
+        function deletePayRate(keyID) {
+            var myyPayRate = new Object();
+            myyPayRate.PayRuleID = $('#HiddenFieldKey').val();
+            myyPayRate.PayRateID = keyID;
 
+            myyPayRate.SiteID = SITE_ID;
+
+            $.ajax({
+                type: "Post",
+                url: window.location.pathname + "/deletePayRates",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: JSON.stringify({ myyPayRate: myyPayRate }),
+                success: function (response) {
+
+
+                    if (response.d != null) {
+                        $.unblockUI();
+
+                        if (response.d.toLowerCase() == "true") {
+                            payRateList();
+                            alert("Pay rate deleted successful.");
+                        } else {
+                            alert("Failed to delete pay rate.");
+                        }
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
+        }
+        function getLastCalendaTime(updateRow, isPPH) {
+            var lasttime = "";
+            var allRowsAfter = updateRow.nextAll();
+            for (var r = 0; r < allRowsAfter.length; r++) {
+                var rowValue = "";
+                var row = $(allRowsAfter[r]);
+
+                if (isPPH == false)
+                    rowValue = $(row.children()[2]).html();
+                else
+                    rowValue = $(row.children()[3]).html();
+
+                if (rowValue.trim() == "") {
+                    lasttime = $(row.children()[1]).html();
+                } else {
+                    break;
+                }
+            };
+            return lasttime;
+
+        }
+
+
+        function insertPayRate(payRate, timeFrom, timeTo, type) {
+            var myyPayRate = new Object();
+            myyPayRate.PayRuleID = $('#HiddenFieldKey').val();
+            myyPayRate.PayRateTo = timeTo;
+            myyPayRate.PayType = type;
+            myyPayRate.PayRateFrom = timeFrom;
+            myyPayRate.SiteID = SITE_ID;
+
+            $.ajax({
+                type: "Post",
+                url: window.location.pathname + "/insertPayRates",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: JSON.stringify({ myyPayRate: myyPayRate }),
+                success: function (response) {
+
+                    var jsonData = response.d;
+                    if (jsonData != null) {
+                        $.unblockUI();
+                        if (jsonData.toLowerCase() == "true") {
+                            alert("Pay rate added successful.");
+                        } else {
+                            alert("Failed to add pay rate.");
+                        }
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
+        }
+
+
+        function updatePayRate(selectedKey, payRate, timeFrom, timeTo, type) {
+            var myyPayRate = new Object();
+            myyPayRate.PayRuleID = $('#HiddenFieldKey').val();
+            myyPayRate.PayRateTo = timeTo;
+            myyPayRate.PayType = type;
+            myyPayRate.PayRateFrom = timeFrom;
+            myyPayRate.SiteID = SITE_ID;
+            myyPayRate.PayRateID = selectedKey;
+            $.ajax({
+                type: "Post",
+                url: window.location.pathname + "/updatePayRates",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: JSON.stringify({ myyPayRate: myyPayRate }),
+                success: function (response) {
+
+                    var jsonData = response.d;
+                    if (jsonData != null) {
+                        $.unblockUI();
+                        if (jsonData.toLowerCase() == "true") {
+                            alert("Pay rate added successful.");
+                        } else {
+                            alert("Failed to add pay rate.");
+                        }
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
+        }
+
+
+        function insertShiftPayRate(payRate, timeFrom, timeTo, type) {
+            var myyPayRate = new Object();
+            myyPayRate.PayRuleID = $('#HiddenFieldKey').val();
+            myyPayRate.PayRateTo = timeTo;
+            myyPayRate.PayType = type;
+            myyPayRate.PayRateFrom = timeFrom;
+            myyPayRate.SiteID = SITE_ID;
+
+            $.ajax({
+                type: "Post",
+                url: window.location.pathname + "/insertShiftPayRate",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: JSON.stringify({ myyPayRate: myyPayRate }),
+                success: function (response) {
+
+                    var jsonData = response.d;
+                    if (jsonData != null) {
+                        if (jsonData.toLowerCase() == "true") {
+                            alert("Shift Allowance added successful.");
+                        } else {
+                            alert("Failed to add shift allawonce.");
+                        }
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
+        }
+
+        function updateShiftPayRate(selectedKey, payRate, timeFrom, timeTo, type) {
+
+        }
 
 
         function showPPHTimeSetup(parameters) {
@@ -348,9 +591,11 @@
 
                 //}else 
 
-                //    if (index == 6) {
-                //    listPayRates();
-                //}
+                if (index == 6) {
+                    payRateList();
+                } else if (index == 7) {
+                    shiftAllawonceList();
+                }
             }
 
             $('.divDetail').css('display', 'none');
@@ -384,27 +629,103 @@
             });
         }
 
-        function listPayRates(parameters) {
-            //$("#payRateData").html('');
-            //$.ajax({
-            //    async: false,
-            //    type: "Post",
-            //    url: window.location.pathname + "/ListPayRate",
-            //    contentType: "application/json; charset=utf-8",
-            //    dataType: "json", // can be used for plaintext or for JSON
-            //    data: "{ 'siteID': '" + SITE_ID + "', 'payRuleID': '" + $('#HiddenFieldKey').val() + "'}",
-            //    success: function (response) {
-            //        var data = response.d;
 
-            //        if (data != null) {
-            //            $("#payRateData").html(data);
-            //        }
-            //    },
-            //    error: function (error) {
-            //        // report error back to user
-            //        alert(error.responseText);
-            //    }
-            //});
+
+
+        function payRateList(parameters) {
+            // Clear List Control
+            var allRows = $("#payRateData > tr");
+            for (i = 0 ; i < allRows.length; i++) {
+                var currentRow = allRows[i];
+                $(currentRow.children[2]).attr("data-keyid", "");
+                $(currentRow.children[3]).attr("data-keyid", "");
+                $(currentRow.children[2]).html("");
+                $(currentRow.children[3]).html("");
+            }
+
+
+            $.ajax({
+                async: false,
+                type: "Post",
+                url: window.location.pathname + "/payRateList",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: "{ 'SiteID': '" + SITE_ID + "', 'PayRuleID': '" + $('#HiddenFieldKey').val() + "'}",
+                success: function (response) {
+
+                    var jsonData = JSON.parse(response.d);
+                    if (jsonData != null) {
+                        // $("#payRateData").html(data);
+
+                        for (r = 0; r < jsonData.length; r++) {
+                            var row = jsonData[r];
+                            var PayRateID = row.PayRateID;
+                            var PayRateFrom = row.PayRateFrom;
+                            var PayRateTo = row.PayRateTo;
+                            var PayRuleID = row.PayRuleID;
+                            var PayType = row.PayType;
+
+
+
+
+                            var dateArray1 = PayRateFrom.split(' ');
+
+                            // var dateArray2 = PayRateTo.split(' ');
+                            var FromTime = dateArray1[1].substring(0, 5) + " " + dateArray1[2];
+
+                            var RowToUpdate = $("#payRateData > tr");
+                            for (i = 0 ; i < RowToUpdate.length; i++) {
+                                currentRow = RowToUpdate[i];
+                                if ($(currentRow.children[1]).html() == FromTime) {
+                                    if (PayType.indexOf('PPH') == -1) {
+                                        PayType = PayType.replace("Pay Hours Worked at Rate ", "");
+                                        $(currentRow.children[2]).html(PayType);
+                                        $(currentRow.children[2]).attr("data-keyid", PayRateID);
+                                    } else {
+                                        PayType = PayType.replace("Pay Hours Worked at Rate ", "");
+                                        PayType = PayType.replace(" on PPH", "");
+                                        $(currentRow.children[3]).html(PayType);
+                                        $(currentRow.children[3]).attr("data-keyid", PayRateID);
+                                    }
+                                }
+                            }
+
+                        }
+
+
+
+
+
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
+        }
+
+        function shiftAllawonceList(parameters) {
+
+            $.ajax({
+                async: false,
+                type: "Post",
+                url: window.location.pathname + "/paySchedulesList",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json", // can be used for plaintext or for JSON
+                data: "{ 'SiteID': '" + SITE_ID + "', 'PayRuleID': '" + $('#HiddenFieldKey').val() + "'}",
+                success: function (response) {
+                    var data = response.d;
+
+                    if (data != null) {
+                        // $("#payRateData").html(data);
+                    }
+                },
+                error: function (error) {
+                    // report error back to user
+                    alert(error.responseText);
+                }
+            });
         }
 
         function showAllDivDetail() {
@@ -471,7 +792,7 @@
                 }
             });
 
-            listPayRates();
+            payRateList();
             listPayBracketing();
         }
 
@@ -955,7 +1276,7 @@
 
     </form>
 
-    <div id="dlgPayRate" date-ispph="false" data-ispayrate="true" style="display: none;">
+    <div id="dlgPayRate" date-ispph="false" data-ispayrate="true" data-selectedkey="" style="display: none;">
         <div class="title" style="color: #222222; font-weight: bold; background: #0095DA; padding: 5px;">
             Normal Working Day Pay Rate
         </div>
@@ -972,10 +1293,11 @@
                 <option value="3.0000">3.0000</option>
             </select>
             from
-            <input id="tbPayStartTime" type="text" placeholder="time" />
+            <input id="tbPayStartTime" type="text" placeholder="time" disabled="disabled" style="border: none;" />
             <hr />
-            <button id="dlgPayRateOk">OK</button>
-            <button id="dlgPayRatCancel">Cancel</button>
+            <button id="dlgPayRateOk" style="width: 120px">Save</button>
+            <button id="dlgPayRateDelete" style="width: 120px">Delete</button>
+            <button id="dlgPayRatCancel" style="width: 120px">Cancel</button>
         </div>
     </div>
 </body>
