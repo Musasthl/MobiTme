@@ -71,7 +71,7 @@
 
             .option-wrapper .selected {
                 display: block;
-                margin: 6px 0px;
+                margin: 25px 0px;
                 padding: 8px 10px 9px 10px;
                 background-image: url("../Styles/Images/controls/dropdown.png");
                 background-repeat: no-repeat;
@@ -305,6 +305,12 @@
                                 }
 
 
+                            } else {
+  
+                                if (r == 0) {
+                                    $('#selected-site').attr("data-siteid", row.SiteID);
+                                    $('#selected-site').html(row.Site);
+                                }
                             }
 
                             innerHtml += "<li data-siteid='" + row.SiteID + "' data-clientid='" + row.ClientID + "' data-sitename='" + row.Site + "'> ";
@@ -378,7 +384,7 @@
                 </div>
                 <!-- End Share -->
                 <div id="ScrollMetroMenu" style="height: 100%; width: 100%; position: relative;">
-                    <div id="MenuContant">
+                    <div id="MenuContant" style="padding-top: 15px;">
                     </div>
                 </div>
             </div>
