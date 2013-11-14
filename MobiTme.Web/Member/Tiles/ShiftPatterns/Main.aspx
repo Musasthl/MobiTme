@@ -334,7 +334,7 @@
 
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Cost Centre Listing</h1>
+                        <h1>Shift Pattern Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -455,7 +455,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Shift Pattern Detail</span>
+                        <span class="title">Edit Shift Pattern Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -465,7 +465,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Shift Pattern Schedule</span>
+                        <span class="title">Edit Shift Pattern Schedule</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -475,7 +475,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Overtime Cycle Detail</span>
+                        <span class="title">Edit Overtime Cycle Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -485,7 +485,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Overtime Adjustment Detail</span>
+                        <span class="title">Edit Overtime Adjustment Detail</span>
                         <span class="arrow "></span>
                     </a>
 

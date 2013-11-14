@@ -344,11 +344,11 @@
     <form id="form1" runat="server">
         <asp:HiddenField ID="HiddenFieldKey" runat="server" />
         <div id="layout_center">
-            <div class="pageTitle">Position</div>
+            <div class="pageTitle">Position Masterfile</div>
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Position List</h1>
+                        <h1>Position Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -543,7 +543,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Position Detail</span>
+                        <span class="title">Edit Position Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -553,7 +553,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Cost to Company Detail</span>
+                        <span class="title">Edit Cost to Company Detail</span>
                         <span class="arrow "></span>
                     </a>
 

@@ -312,7 +312,7 @@
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Supervisor Listing</h1>
+                        <h1>Supervisor Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -398,7 +398,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Supervisor Detail</span>
+                        <span class="title">Edit Supervisor Detail</span>
                         <span class="arrow "></span>
                     </a>
 

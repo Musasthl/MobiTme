@@ -926,11 +926,11 @@
     <form id="form1" runat="server">
         <asp:HiddenField ID="HiddenFieldKey" runat="server" />
         <div id="layout_center">
-            <div class="pageTitle">Pay Rules Masterfile</div>
+            <div class="pageTitle">Pay Rule Masterfile</div>
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Cost Centre Listing</h1>
+                        <h1>Pay Rule Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -1181,7 +1181,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Description Detail</span>
+                        <span class="title">Edit Description Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1191,7 +1191,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Shift Date Adjustment Detail</span>
+                        <span class="title">Edit Shift Date Adjustment Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1201,7 +1201,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Clocking Rounding Detail</span>
+                        <span class="title">Edit Clocking Rounding Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1212,7 +1212,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Clocking Bracketing Detail</span>
+                        <span class="title">Edit Clocking Bracketing Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1223,7 +1223,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Pay Rate Detail</span>
+                        <span class="title">Edit Pay Rate Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1233,7 +1233,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Shift Allowance Detail</span>
+                        <span class="title">Edit Shift Allowance Detail</span>
                         <span class="arrow "></span>
                     </a>
 

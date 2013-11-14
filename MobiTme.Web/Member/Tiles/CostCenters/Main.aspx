@@ -323,7 +323,7 @@ Sidebar toggler(show/hide)
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Cost Centre Listing</h1>
+                        <h1>Cost Centre Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -409,7 +409,7 @@ Sidebar toggler(show/hide)
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Cost Center Detail</span>
+                        <span class="title">Edit Cost Center Detail</span>
                         <span class="arrow "></span>
                     </a>
 

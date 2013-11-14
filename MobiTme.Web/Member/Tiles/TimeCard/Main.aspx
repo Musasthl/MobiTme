@@ -363,7 +363,7 @@
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Supervisor Listing</h1>
+                        <h1>Time and Attendance Detail</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">

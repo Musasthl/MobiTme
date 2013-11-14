@@ -369,7 +369,7 @@
             <div data-role="content" id="MetroMenu">
                 <!-- Share -->
                 <div class="page-title-content" style="margin-bottom: 30px;">
-                    <span class="page-title" style="margin-bottom: 40px;">MetroMenu</span>
+                    <span class="pag e-title" style="margin-bottom: 40px;">MetroMenu</span>
 
                     <div class="option-wrapper">
                         <a id="selected-site" data-site="" href="javascript:;" class="selected open">Select a site</a>

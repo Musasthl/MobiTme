@@ -313,7 +313,7 @@
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Available Department Listing</h1>
+                        <h1>Department Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -333,7 +333,7 @@
                         <h1>Department Detail</h1>
                     </div>
                     <div style="padding-left: 10px;">
-                        <div style="width: 120px; float: left; padding-top: 5px">Cost Centre</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Department</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbDepartment" style="width: 300px" type="text">
@@ -399,7 +399,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Department Detail</span>
+                        <span class="title">Edit Department Detail</span>
                         <span class="arrow "></span>
                     </a>
 

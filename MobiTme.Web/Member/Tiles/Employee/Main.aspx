@@ -472,11 +472,11 @@
     <form id="form1" runat="server">
         <asp:HiddenField ID="HiddenFieldKey" runat="server" />
         <div id="layout_center">
-            <div class="pageTitle">Employee</div>
+            <div class="pageTitle">EMPLOYEE MASTERFILE</div>
             <div id="detailContent">
                 <div id="divDetail1" class="divDetail">
                     <div>
-                        <h1>Employee List</h1>
+                        <h1>Employee Listing</h1>
                     </div>
 
                     <table class="striped" style="margin-top: 30px;">
@@ -1209,7 +1209,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Personal Detail</span>
+                        <span class="title">Edit Personal Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1220,7 +1220,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Contact Detail</span>
+                        <span class="title">Edit Contact Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1231,7 +1231,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Address Detail</span>
+                        <span class="title">Edit Address Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1241,7 +1241,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Next of Kin Detail</span>
+                        <span class="title">Edit Next of Kin Detail</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1252,7 +1252,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Employment Detail</span>
+                        <span class="title">Edit Employment Detail</span>
                         <span class="arrow "></span>
                     </a>
 
