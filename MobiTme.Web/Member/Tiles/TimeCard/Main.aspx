@@ -379,13 +379,13 @@
                                 <td>Supervisor</td>
                                 <td>Position</td>
                                 <td>Shift Pattern</td>
-                                <td>Hours 10</td>
-                                <td>Hours 13</td>
-                                <td>Hours 15</td>
-                                <td>Hours 20</td>
-                                <td>Hours 23</td>
-                                <td>Hours 25</td>
-                                <td>Hours 30</td>
+                                <td style="min-width:90px;">Hours (1.0000)</td>
+                                <td style="min-width:90px;">Hours (1.3333)</td>
+                                <td style="min-width:90px;">Hours (1.5000)</td>
+                                <td style="min-width:90px;">Hours (2.0000)</td>
+                                <td style="min-width:90px;">Hours (2.3333)</td>
+                                <td style="min-width:90px;">Hours (2.5000)</td>
+                                <td style="min-width:90px;">Hours (3.0000)</td>
                                 <td>SA 01</td>
                                 <td>SA 02</td>
                                 <td>SA 03</td>

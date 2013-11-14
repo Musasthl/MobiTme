@@ -45,6 +45,8 @@ img {
  	position: relative;
 	 bottom: -15px;
  
+ 	text-align: center;
+ 	padding-top: 24px;
 }
 .description {
 	font-size: 13px;

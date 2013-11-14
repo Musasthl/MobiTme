@@ -376,37 +376,37 @@ namespace MobiTme.Web.Member.Tiles.TimeCard
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours10);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours13);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours15);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours20);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours23);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td  style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours25);
                     sbInnerHtml.Append("</td>");
 
 
-                    sbInnerHtml.Append("<td>");
+                    sbInnerHtml.Append("<td style='min-width:90px;'>");
                     sbInnerHtml.Append(timeCardData.Hours30);
                     sbInnerHtml.Append("</td>");
 

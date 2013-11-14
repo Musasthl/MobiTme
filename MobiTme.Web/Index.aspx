@@ -169,30 +169,37 @@
             //Member/MetroMenu.aspx
             if (actionID == "0")
                 backToMap();
-            else {
+            else
+                if (actionID == "1") {
+                    var confirmLogout = confirm("Are you sure you want to log out?");
+                    if (confirmLogout == true) {
+                        slideTo('Login', true);
+                    }
+                }
+                else {
 
 
-                //document.getElementById("frame1").style.display = "none";
-                //document.getElementById("frame2").style.display = "none";
-                //document.getElementById("frame3").style.display = "none";
-                //document.getElementById("frame4").style.display = "none";
+                    //document.getElementById("frame1").style.display = "none";
+                    //document.getElementById("frame2").style.display = "none";
+                    //document.getElementById("frame3").style.display = "none";
+                    //document.getElementById("frame4").style.display = "none";
 
-                showLoader();
-
-
-                //document.getElementById("IframePage1").style.display = "none";
-                //document.getElementById("IframePage2").style.display = "none";
-                //document.getElementById("IframePage3").style.display = "none";
-                //document.getElementById("IframePage4").style.display = "none";
+                    showLoader();
 
 
-                var frameToDisplay = document.getElementById("IframePage4");
+                    //document.getElementById("IframePage1").style.display = "none";
+                    //document.getElementById("IframePage2").style.display = "none";
+                    //document.getElementById("IframePage3").style.display = "none";
+                    //document.getElementById("IframePage4").style.display = "none";
 
-                frameToDisplay.src = actionID + "?SITEID=" + querystring;
-                frameToDisplay.style.display = "";
-                slideTo('Content', false);
 
-            }
+                    var frameToDisplay = document.getElementById("IframePage4");
+
+                    frameToDisplay.src = actionID + "?SITEID=" + querystring;
+                    frameToDisplay.style.display = "";
+                    slideTo('Content', false);
+
+                }
         }
 
         function backToMap() {

@@ -8,6 +8,7 @@
     <link href="../../Styles/forms.css" rel="stylesheet" />
         <link href="../../../Scripts/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="../../../Scripts/jquery-2.0.3.min.js"></script>
+        <script src="../../../Scripts/jquery.number.min.js"></script>
     <script src="../../../Scripts/utilities.js"></script>
  
     <script type="text/javascript">
@@ -23,6 +24,21 @@
             ListDataTable();
             showDivDetail(1);
  
+
+            $('#tbCtcRate10').number(true, 2);
+            $('#tbCtcRate13').number(true, 2);
+            $('#tbCtcRate15').number(true, 2);
+            $('#tbCtcRate20').number(true, 2);
+            $('#tbCtcRate23').number(true, 2);
+            $('#tbCtcRate25').number(true, 2);
+            $('#tbCtcRate30').number(true, 2);
+
+            $('#tbCtcSA01').number(true, 2);
+            $('#tbCtcSA02').number(true, 2);
+            $('#tbCtcSA03').number(true, 2);
+
+            $('#tbCtcHoursPPH').number(true, 2);
+            $('#tbCtcPaidPPH').number(true, 2);
 
             layout_left_width = $('#layout_left')[0].offsetWidth;
             layout_center_width = $('#layout_center')[0].offsetWidth;
@@ -419,7 +435,7 @@
                         <br>
                         <br>
 
-                        <div style="width: 120px; float: left; padding-top: 5px">Ovrtime 1.5000</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Overtime  1.5000</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbCtcRate15" style="width: 100px" type="text">
@@ -427,7 +443,7 @@
                         <br>
                         <br>
 
-                        <div style="width: 120px; float: left; padding-top: 5px">Ovrtime 2.0000</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Overtime  2.0000</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbCtcRate20" style="width: 100px" type="text">
@@ -435,7 +451,7 @@
                         <br>
                         <br>
 
-                        <div style="width: 120px; float: left; padding-top: 5px">Ovrtime 2.3333</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Overtime  2.3333</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbCtcRate23" style="width: 100px" type="text">
@@ -443,7 +459,7 @@
                         <br>
                         <br>
 
-                        <div style="width: 120px; float: left; padding-top: 5px">Ovrtime 2.5000</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Overtime  2.5000</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbCtcRate25" style="width: 100px" type="text">
@@ -451,7 +467,7 @@
                         <br>
                         <br>
 
-                        <div style="width: 120px; float: left; padding-top: 5px">Ovrtime 3.0000</div>
+                        <div style="width: 120px; float: left; padding-top: 5px">Overtime  3.0000</div>
                         <div style="width: 20px; float: left; padding-top: 5px">:</div>
                         <div style="width: 300px; float: left;">
                             <input id="tbCtcRate30" style="width: 100px" type="text">

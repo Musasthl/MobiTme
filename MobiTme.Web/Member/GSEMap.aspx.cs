@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MobiTime.WebServices;
 using Newtonsoft.Json;
-
+//http://blog.shamess.info/2009/09/29/zoom-to-fit-all-markers-on-google-maps-api-v3/
 namespace MobiTme.Member
 {
     public partial class GSEMap : System.Web.UI.Page

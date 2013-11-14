@@ -54,19 +54,20 @@ function AppInterface(type) {
 
    { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/PayRules/Main.aspx", "Desc": "Pay Rules", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
 
-   { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/Employee/Main.aspx", "Desc": "Employee Management", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
+   { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/Employee/Main.aspx", "Desc": "Employee", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
 
    { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/ShiftPatterns/Main.aspx", "Desc": "Shift Patterns", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
 
-    { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/TimeCard/Main.aspx", "Desc": "Manage Time and Attendance", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
+    { "cmd": "list", "ButtonSize": "Large", "cmdPage": "Member/Tiles/TimeCard/Main.aspx", "Desc": "Time & Attendance", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
 
 
       { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/CostCenters/Main.aspx", "Desc": "Cost Centers", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/users.png" },
         
         { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Departments/Main.aspx", "Desc": "Departments", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
 
-        { "cmd": "list", "ButtonSize": "Large", "cmdPage": "0", "Desc": "Map", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
-        
+        { "cmd": "list", "ButtonSize": "Small", "cmdPage": "0", "Desc": "Map", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
+           { "cmd": "list", "ButtonSize": "Small", "cmdPage": "1", "Desc": "Logout", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
+
           { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Positions/Main.aspx", "Desc": "Positions", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
       { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Supervisors/Main.aspx", "Desc": "Super visors", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
 
