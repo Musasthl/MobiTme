@@ -58,15 +58,6 @@ namespace MobiTme.Web.Member.Tiles.Employee {
         protected global::System.Web.UI.HtmlControls.HtmlInputText tbFirstNames;
         
         /// <summary>
-        /// tbTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbTitle;
-        
-        /// <summary>
         /// tbIdentityNumber control.
         /// </summary>
         /// <remarks>
@@ -157,15 +148,6 @@ namespace MobiTme.Web.Member.Tiles.Employee {
         protected global::System.Web.UI.HtmlControls.HtmlInputText tbPhysical04;
         
         /// <summary>
-        /// tbCountry_Physical control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbCountry_Physical;
-        
-        /// <summary>
         /// tbPhysicalCode control.
         /// </summary>
         /// <remarks>
@@ -211,15 +193,6 @@ namespace MobiTme.Web.Member.Tiles.Employee {
         protected global::System.Web.UI.HtmlControls.HtmlInputText tbPostal04;
         
         /// <summary>
-        /// tbCountry_Postal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbCountry_Postal;
-        
-        /// <summary>
         /// tbPostalCode control.
         /// </summary>
         /// <remarks>
@@ -263,15 +236,6 @@ namespace MobiTme.Web.Member.Tiles.Employee {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText tbResidential04;
-        
-        /// <summary>
-        /// tbCountry_Residential control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tbCountry_Residential;
         
         /// <summary>
         /// tbResidentialCode control.

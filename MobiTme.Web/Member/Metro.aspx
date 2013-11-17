@@ -22,6 +22,7 @@
     <script src="Styles/menu.js"></script>
     <script src="../Scripts/utilities.js"></script>
     <style type="text/css">
+      
         body {
             background-color: black;
             color: white;
@@ -63,18 +64,17 @@
         /* Site Selector */
         .option-wrapper {
             position: absolute;
-            width: 233px;
+            width: 400px;
             right: 22px;
-            top: 68px;
+            top: 27px;
             z-index: 1;
         }
 
             .option-wrapper .selected {
                 display: block;
                 margin: 25px 0px;
-                padding: 8px 10px 9px 10px;
-                background-image: url("../Styles/Images/controls/dropdown.png");
-                background-repeat: no-repeat;
+           
+   
                 font-size: 13px;
                 color: #fff;
                 text-decoration: none;
@@ -83,7 +83,7 @@
                 .option-wrapper .selected:hover,
                 .option-wrapper .selected.open {
                     text-decoration: none;
-                    background-image: url("../Styles/Images/controls/dropdown_hover.png");
+            
                 }
 
                 .option-wrapper .selected:hover {
@@ -92,16 +92,18 @@
 
 
         ul.site_selector {
-            background-color: #111;
+        
             border: 1px solid #333;
             display: none;
             position: absolute;
             margin: 0px;
             margin-top: -8px;
             padding: 0px;
-            width: 230px;
+            width: 400px;
             list-style: none;
             z-index: 1;
+            border-left: none;
+            border-right: none;
         }
 
             ul.site_selector li {
@@ -116,23 +118,24 @@
             }
 
                 ul.site_selector li .desc {
-                    font-size: 11px;
+                    font-size: 14px;
                     color: #acacac;
-                    position: absolute;
+          
                     top: 6px;
-                    right: 5px;
+           
                     padding: 1px 8px 1px 8px;
-                    border-radius: 2px;
-                    background: #444;
+               
+               
                     transition: all ease-in-out .15s;
                     -webkit-transition: all ease-in-out .15s;
                     -moz-transition: all ease-in-out .15s;
-                    -webkit-border-radius: 2px;
-                    -moz-border-radius: 2px;
-                    border-radius: 2px;
+    
                     opacity: 0.8;
                     filter: alpha(opacity=80);
+                    width: 200px;
+                    float: left;
                 }
+    
     </style>
     <script type="text/javascript">
 
@@ -314,8 +317,10 @@
                             }
 
                             innerHtml += "<li data-siteid='" + row.SiteID + "' data-clientid='" + row.ClientID + "' data-sitename='" + row.Site + "'> ";
-                            innerHtml += row.Site;
-                            innerHtml += "<span class='desc'>" + row.Client + "</span>";
+                            innerHtml += "<div class='desc'>" + row.Client + "</div>";
+                            innerHtml += "<div class='descsite'>" + row.Site + "</div>";
+                          // innerHtml += row.Site;
+                     
 
                             innerHtml += "</li>";
 
@@ -372,7 +377,8 @@
                     <span class="page-title" style="margin-bottom: 40px;">MOBI-TIME</span>
 
                     <div class="option-wrapper">
-                        <a id="selected-site" data-site="" href="javascript:;" class="selected open">Select a site</a>
+                        <a id="selected-site" data-site="" href="javascript:;" class="selected open" style="font-size: 14px;
+padding-left: 222px;">Select a site</a>
                         <ul id="site_selector" class="site_selector" style="">
                         </ul>
                     </div>

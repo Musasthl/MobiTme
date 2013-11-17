@@ -34,7 +34,7 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         }
 
 
-        DateTime dateTime = DateTime.Parse("1/1/0001 08:00:00 AM");
+        DateTime dateTime = DateTime.Parse("1/1/0001 00:00:00 AM");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

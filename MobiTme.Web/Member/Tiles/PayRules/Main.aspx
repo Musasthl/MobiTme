@@ -18,7 +18,7 @@
 
 
     <script src="../../../Scripts/utilities.js"></script>
-
+        <script src="../../../Scripts/jquery.number.min.js"></script>
     <script src="../../../Scripts/jquery.timepicker/jquery-ui-sliderAccess.js"></script>
     <script src="../../../Scripts/jquery.timepicker/jquery-ui-timepicker-addon.js"></script>
     <link href="../../../Scripts/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -42,10 +42,27 @@
             ListDataTable();
             showDivDetail(1);
 
-            $('#tbShiftStart').datepicker();
-            $('#tbShiftEnd').datepicker();
+            $('#tbShiftStart').timepicker();
+            $('#tbShiftEnd').timepicker();
+
+            $('#tbShiftDayAdjustment').number(true, 0);
 
 
+            $("#sideMenu > li").click(function () {
+                if (($(this).attr("id") != "liSave") && ($(this).attr("id") != "liDelete") && ($(this).attr("id") != "liNew") && ($(this).attr("id") != "liDelete")) {
+
+                    var elements = $("#sideMenu > li");
+                    for (var r = 0; r < elements.length; r++) {
+                        var elem = elements[r];
+                    }
+
+                    $("#sideMenu > li:eq(1)").nextAll().removeClass("selected");
+
+                    if ($("#sideMenu > li:eq(1)") != $(this))
+                        $(this).addClass("selected");
+                }
+            });
+            
             layout_left_width = $('#layout_left')[0].offsetWidth;
             layout_center_width = $('#layout_center')[0].offsetWidth;
             $(".sidebar-toggler").click(
@@ -731,7 +748,7 @@
             });
         }
 
-        function showAllDivDetail() {
+        function showAllDivDetail() {$("#sideMenu > li:eq(1)").nextAll().removeClass("selected"); 
             if ($('#HiddenFieldKey').val() == "") {
                 alert("Please select the record you want to view.");
                 return;
@@ -807,7 +824,7 @@
                 $.ajax({
                     type: "Post",
                     async: false,
-                    url: window.location.pathname + "/Select",
+                    url: window.location.pathname + "/Delete",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json", // can be used for plaintext or for JSON
                     data: "{ 'SiteID': '" + SITE_ID + "', 'KeyID': '" + KeyID + "'}",
@@ -815,7 +832,7 @@
                         var data = response.d;
                         if (data.toLowerCase() == 'true') {
                             ListDataTable();
-                            alert('Record deleted successful.');
+                            alert('Record deleted successful.'); showDivDetail(1);
                         } else {
                             alert('Failed to delete record.');
                         }
@@ -1191,7 +1208,7 @@
 
                     <a href="javascript:;">
                         <i class="fa fa-edit fa-2x"></i>
-                        <span class="title">Edit Shift Date Adjustment Detail</span>
+                        <span class="title">Edit Shift Date Adjustment</span>
                         <span class="arrow "></span>
                     </a>
 
@@ -1249,11 +1266,11 @@
                     </a>
                 </li>
 
-                <li id="liDelete">
+                <li id="liDelete"  onclick="deleteData()">
 
 
                     <a href="javascript:;">
-                        <i class="fa fa-eraser fa-2x"></i>
+                        <%--<i class="fa fa-eraser fa-2x"></i>--%>
                         <span class="title">Delete</span>
                         <span class="arrow "></span>
                     </a>

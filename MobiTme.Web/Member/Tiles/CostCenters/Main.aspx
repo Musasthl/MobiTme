@@ -29,15 +29,34 @@ Sidebar toggler(show/hide)
             showDivDetail(1);
 
             layout_left_width = $('#layout_left')[0].offsetWidth;
-            layout_center_width =  $('#layout_center')[0].offsetWidth;
-            $(".sidebar-toggler").click(
-                function() {
+            layout_center_width = $('#layout_center')[0].offsetWidth;
 
-                    if (isMenu_opened == false)
-                        {
+
+            $("#sideMenu > li").click(function () {
+                if (($(this).attr("id") != "liSave") && ($(this).attr("id") != "liDelete") && ($(this).attr("id") != "liNew") && ($(this).attr("id") != "liDelete")) {
+
+                    var elements = $("#sideMenu > li");
+                    for (var r = 0; r < elements.length; r++) {
+                        var elem = elements[r];
+                    }
+
+                    $("#sideMenu > li:eq(1)").nextAll().removeClass("selected");
+                    
+                    if ($("#sideMenu > li:eq(1)") != $(this))
+                        $(this).addClass("selected");
+                }
+            });
+            
+
+
+
+            $(".sidebar-toggler").click(
+                function () {
+
+                    if (isMenu_opened == false) {
                         $('#layout_center').css('width', layout_center_width);
 
-                        $('#layout_left').css('width', layout_left_width );
+                        $('#layout_left').css('width', layout_left_width);
 
                         $("#sideMenu > li .title").css("display", "");
                         isMenu_opened = true;
@@ -46,7 +65,7 @@ Sidebar toggler(show/hide)
 
                         $('#layout_left').css('width', "50");
 
-                   
+
                         $("#sideMenu > li .title").css("display", "none");
                         isMenu_opened = false;
                     }
@@ -62,7 +81,7 @@ Sidebar toggler(show/hide)
                 else
 
                     $('#HiddenFieldKey').val(keyElem.html());
-                
+
 
             });
 
@@ -156,7 +175,7 @@ Sidebar toggler(show/hide)
             $("#divDetail" + index + " :input").attr("disabled", false);
         }
 
-        function showAllDivDetail() {
+        function showAllDivDetail() {$("#sideMenu > li:eq(1)").nextAll().removeClass("selected");
             if ($('#HiddenFieldKey').val() == "") {
                 alert("Please select the record you want to view.");
                 return;
@@ -216,7 +235,7 @@ Sidebar toggler(show/hide)
                 $.ajax({
                     type: "Post",
                     async: false,
-                    url: window.location.pathname + "/Select",
+                    url: window.location.pathname + "/Delete",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json", // can be used for plaintext or for JSON
                     data: "{ 'SiteID': '" + SITE_ID + "', 'KeyID': '" + KeyID + "'}",
@@ -225,6 +244,7 @@ Sidebar toggler(show/hide)
                         if (data.toLowerCase() == 'true') {
                             ListDataTable();
                             alert('Record deleted successful.');
+                            showDivDetail(1);
                         } else {
                             alert('Failed to delete record.');
                         }
@@ -424,7 +444,7 @@ Sidebar toggler(show/hide)
                     </a>
                 </li>
 
-                <li id="liDelete">
+                <li id="liDelete" onclick="deleteData()">
 
 
                     <a href="javascript:;">

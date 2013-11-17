@@ -65,11 +65,25 @@ function AppInterface(type) {
         
         { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Departments/Main.aspx", "Desc": "Departments", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
 
-        { "cmd": "list", "ButtonSize": "Small", "cmdPage": "0", "Desc": "Map", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
-           { "cmd": "list", "ButtonSize": "Small", "cmdPage": "1", "Desc": "Logout", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
+          { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/LiveView/Main.aspx", "Desc": "Live View", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
+
+
+       
+
+          { "cmd": "list", "ButtonSize": "Small", "cmdPage": "0", "Desc": "Map", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
+
+
+
+ 
+      
+      
+    { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Supervisors/Main.aspx", "Desc": "Supervisors", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
+
+
 
           { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Positions/Main.aspx", "Desc": "Positions", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
-      { "cmd": "list", "ButtonSize": "Small", "cmdPage": "Member/Tiles/Supervisors/Main.aspx", "Desc": "Super visors", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/inventory.png" },
+
+{ "cmd": "list", "ButtonSize": "Small", "cmdPage": "1", "Desc": "Logout", "ColorClass": "color_27 ", "ImageScr": "images/windows8_icons/time.png" },
 
 
 

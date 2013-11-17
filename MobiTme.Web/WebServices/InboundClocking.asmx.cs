@@ -79,5 +79,75 @@ namespace MobiTime.WebServices
 
             return Accepted;
         }
+
+
+
+
+        [WebMethod(Description = "MobiTime Web Service - View top n clockings received by Mobi-Time for a site.")]
+        public List<ReturnData.ReturnInboundClockingData> ViewCurrentClockings(
+            string ApplicationPassword,
+            int SiteID,
+            int NumberOfClockings)
+        {
+            ReturnData.ReturnInboundClockingData DSReturnInboundClockings = null;
+
+            SqlDataReader InboundClockingList = null;
+            List<ReturnData.ReturnInboundClockingData> ReturnedInboundClockings = new List<ReturnData.ReturnInboundClockingData>();
+
+            try
+            {
+                if (Functions.Authentication.Authenticate(ApplicationPassword) == false)
+                {
+                    ReturnedInboundClockings = null;
+                }
+                else
+                {
+                    com.Connection = con;
+                    con.Open();
+
+                    com.CommandText = "Select Top " + NumberOfClockings + " " +
+                                            "e.FirstNames, " +
+                                            "e.Surname, " +
+                                            "e.Cellular, " +
+                                            "c.ClockingNumber, " +
+                                            "c.ClockingDate " +
+                                        "From " +
+                                            "Clockings c " +
+                                            "Inner Join Terminals t on c.Terminal = t.Terminal " +
+                                            "Left Outer Join Employees e on c.ClockingNumber = e.ClockingNumber " +
+                                        "Where " +
+                                            "t.DeletedAtUTC is null " +
+                                            "And t.SiteID = " + SiteID + " " +
+                                        "Order By c.ClockingDate DESC";
+                    InboundClockingList = com.ExecuteReader();
+
+                    while (InboundClockingList.Read())
+                    {
+                        DSReturnInboundClockings = new ReturnData.ReturnInboundClockingData();
+
+                        DSReturnInboundClockings.FirstNames = InboundClockingList["FirstNames"].ToString();
+                        DSReturnInboundClockings.Surname = InboundClockingList["Surname"].ToString();
+                        DSReturnInboundClockings.Cellular = InboundClockingList["Cellular"].ToString();
+                        DSReturnInboundClockings.ClockingNumber = InboundClockingList["ClockingNumber"].ToString();
+                        DSReturnInboundClockings.ClockingDate = InboundClockingList["ClockingDate"].ToString();
+
+                        ReturnedInboundClockings.Add(DSReturnInboundClockings);
+                    }
+                }
+            }
+            catch (SqlException Ex)
+            {
+                ReturnedInboundClockings = null;
+            }
+            catch (Exception Ex)
+            {
+                ReturnedInboundClockings = null;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ReturnedInboundClockings;
+        }
     }
 }

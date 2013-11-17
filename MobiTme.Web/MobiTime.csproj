@@ -83,6 +83,7 @@
     <Content Include="Member\Tiles\CostCenters\Main.aspx" />
     <Content Include="Member\Tiles\Departments\Main.aspx" />
     <Content Include="Member\Tiles\Employee\Main.aspx" />
+    <Content Include="Member\Tiles\LiveView\Main.aspx" />
     <Content Include="Member\Tiles\PayRules\Iframes\Deductions.aspx" />
     <Content Include="Member\Tiles\PayRules\Iframes\PayAdjustments.aspx" />
     <Content Include="Member\Tiles\PayRules\Iframes\PayRates.aspx" />
@@ -126,6 +127,7 @@
     <Content Include="Scripts\fontawesome\scss\_spinning.scss" />
     <Content Include="Scripts\fontawesome\scss\_stacked.scss" />
     <Content Include="Scripts\fontawesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\PublishProfiles\ROCKETHOST.pubxml" />
     <None Include="Scripts\jquery-2.0.3-vsdoc.js" />
     <Content Include="Scripts\chosen.jquery.js" />
@@ -324,6 +326,13 @@
     <Compile Include="Member\Tiles\Employee\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Tiles\LiveView\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Tiles\LiveView\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Tiles\PayRules\Iframes\Deductions.aspx.cs">
       <DependentUpon>Deductions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -409,6 +418,7 @@
     <Compile Include="ReturnData\ReturnCostCentres.cs" />
     <Compile Include="ReturnData\ReturnDepartments.cs" />
     <Compile Include="ReturnData\ReturnEmployees.cs" />
+    <Compile Include="ReturnData\ReturnInboundClockings.cs" />
     <Compile Include="ReturnData\ReturnOvertimeAdjustments.cs" />
     <Compile Include="ReturnData\ReturnPayBrackets.cs" />
     <Compile Include="ReturnData\ReturnPayRates.cs" />
