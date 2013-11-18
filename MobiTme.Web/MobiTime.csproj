@@ -193,6 +193,7 @@
     <Content Include="WebServices\CostCentres.asmx" />
     <Content Include="WebServices\Departments.asmx" />
     <Content Include="WebServices\Employees.asmx" />
+    <Content Include="WebServices\Heartbeats.asmx" />
     <Content Include="WebServices\InboundClocking.asmx" />
     <Content Include="WebServices\OvertimeAdjustments.asmx" />
     <Content Include="WebServices\PayBrackets.asmx" />
@@ -455,6 +456,10 @@
     </Compile>
     <Compile Include="WebServices\Employees.asmx.cs">
       <DependentUpon>Employees.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\Heartbeats.asmx.cs">
+      <DependentUpon>Heartbeats.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\InboundClocking.asmx.cs">
