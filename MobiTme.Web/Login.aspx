@@ -77,7 +77,7 @@
         </noscript>
                     <div class="front-card">
 
-                        <img src="Styles/Images/welcome.png" style="margin-left: -120px; padding-left: -120px; padding-top: 40px; margin-top: 40px;">
+                        <img src="Styles/Images/welcome.png" style="margin-left: -130px; padding-left: -120px; padding-top: 40px; margin-top: 40px;">
                         <div class="front-welcome">
                             <div class="front-welcome-text"></div>
                         </div>

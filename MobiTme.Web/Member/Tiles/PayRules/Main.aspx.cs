@@ -34,7 +34,7 @@ namespace MobiTme.Web.Member.Tiles.PayRules
         }
 
 
-        DateTime dateTime = DateTime.Parse("1/1/0001 00:00:00 AM");
+        DateTime dateTime = DateTime.Parse("1/1/1900 00:00:00 AM");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -319,10 +319,12 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
+            DateTime payRateTo = DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo).AddMilliseconds(899);
+
             var wsService = new MobiTime.WebServices.PayRates();
             bool result = wsService.Insert(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid,
                               int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("1900/01/01 " + myyPayRate.PayRateFrom),
-                               DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo));
+                               payRateTo);
 
 
             return result.ToString();
@@ -337,10 +339,13 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
+
+            DateTime payRateTo = DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo).AddMilliseconds(899);
+
             var wsService = new MobiTime.WebServices.PaySchedules();
             bool result = wsService.Insert(ApplicationPassword,
-                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("2013/01/01 " + myyPayRate.PayRateFrom),
-                               DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo), UserGuid);
+                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("1900/01/01 " + myyPayRate.PayRateFrom),
+                            payRateTo, UserGuid);
 
 
             return result.ToString();
@@ -357,14 +362,18 @@ namespace MobiTme.Web.Member.Tiles.PayRules
             string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
 
             var wsService = new MobiTime.WebServices.PayRates();
+            DateTime payRateTo = DateTime.Parse("1900/01/01 " + myyPayRate.PayRateTo).AddMilliseconds(899);
             bool result = wsService.Update(ApplicationPassword, ClientID, int.Parse(myyPayRate.SiteID), UserGuid, int.Parse(myyPayRate.PayRateID),
-                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("2013/11/05 " + myyPayRate.PayRateFrom),
-                               DateTime.Parse("2013/11/05 " + myyPayRate.PayRateTo));
+                              int.Parse(myyPayRate.PayRuleID), myyPayRate.PayType, DateTime.Parse("1900/01/01 " + myyPayRate.PayRateFrom),
+                              payRateTo);
 
 
             return result.ToString();
         }
 
+
+
+         
 
         [System.Web.Services.WebMethod]
         public static string deletePayRates(MyPayRate myyPayRate)
