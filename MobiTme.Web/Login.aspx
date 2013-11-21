@@ -84,14 +84,14 @@
                         <div class="front-signin js-front-signin">
                             <div class="placeholding-input username">
                                 <input type="text" class="text-input email-input" name="txtUsername" id="txtUsername"
-                                    value="" title="Username or email">
+                                    value="musa.sithole@mobitime.co.za" title="Username or email">
                             </div>
                             <table class="flex-table password-signin">
                                 <tbody>
                                     <tr>
                                         <td class="flex-table-primary">
                                             <div class="placeholding-input password flex-table-form">
-                                                <input type="password" class="text-input flex-table-input" id="txtPassword" value="">
+                                                <input type="password" class="text-input flex-table-input" id="txtPassword" value="2mice2fish">
                                             </div>
                                         </td>
                                         <td class="flex-table-secondary">

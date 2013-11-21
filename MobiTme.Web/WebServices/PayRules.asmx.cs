@@ -141,6 +141,17 @@ namespace MobiTime.WebServices
                                                 "'" + DateTime.UtcNow + "', " +
                                                 "'" + UserGuid + "'";
                         InsertedID = (int)com.ExecuteScalar();
+
+
+
+
+                        //com.CommandText = "SELECT PayRuleID FROM PayRules WHERE 
+                        
+
+
+
+
+
                         InsertedPayRule = true;
                     }
                 }

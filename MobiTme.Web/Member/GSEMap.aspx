@@ -122,7 +122,7 @@
             if (lastLat != null) {
                 // Move the camera.
                 var la = ge.createLookAt('');
-                la.set(lastLat, lastLon, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -8.541, 66.213, 20000);
+                la.set(lastLat, lastLon, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -8.541, 1.213, 4000000);
                 ge.getView().setAbstractView(la);
             }
         }

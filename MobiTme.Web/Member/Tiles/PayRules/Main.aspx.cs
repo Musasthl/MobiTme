@@ -225,6 +225,10 @@ namespace MobiTme.Web.Member.Tiles.PayRules
             return sbResult.ToString();
         }
 
+
+
+
+
         [System.Web.Services.WebMethod]
         public static string ListBrackets(string siteID, string payRuleID)
         {
@@ -258,6 +262,56 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
             return sbResult.ToString();
         }
+
+
+        public class MyBracket
+        {
+            public string PayRateID { get; set; }
+            public string SiteID { get; set; }
+            public string PayBracketID { get; set; }
+            public string PayRuleID { get; set; }
+            public string ClockingDirection { get; set; }
+            public string BracketFrom { get; set; }
+            public string BracketTo { get; set; }
+            public string PayClocking { get; set; }
+        }
+
+        [System.Web.Services.WebMethod]
+        public static string insertPayBracket(MyBracket myBracket)
+        {
+            int ClientID = 1;
+
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+
+
+            var wsService = new MobiTime.WebServices.PayBrackets();
+            bool result = wsService.Insert(ApplicationPassword, ClientID, int.Parse(myBracket.SiteID), UserGuid,
+                              int.Parse(myBracket.PayRuleID), myBracket.ClockingDirection, DateTime.Parse("1900/01/01 " + myBracket.BracketFrom)
+                              , DateTime.Parse("1900/01/01 " + myBracket.BracketTo), DateTime.Parse("1900/01/01 " + myBracket.PayClocking));
+
+
+            return result.ToString();
+        }
+
+
+        [System.Web.Services.WebMethod]
+        public static string updatePayBracket(MyBracket myBracket)
+        {
+            int ClientID = 1;
+            string UserGuid = MobiTme.Web.Functions.AuthManager.GetCurrentUser();
+            string ApplicationPassword = MobiTme.Web.Functions.AuthManager.GetWebServiceKey();
+
+            var wsService = new MobiTime.WebServices.PayBrackets();
+            bool result = wsService.Update(ApplicationPassword, ClientID, int.Parse(myBracket.SiteID), UserGuid,
+                               int.Parse(myBracket.PayBracketID), int.Parse(myBracket.PayRuleID), myBracket.ClockingDirection, DateTime.Parse("1900/01/01 " + myBracket.BracketFrom)
+                              , DateTime.Parse("1900/01/01 " + myBracket.BracketTo), DateTime.Parse("1900/01/01 " + myBracket.PayClocking));
+            
+            return result.ToString();
+        }
+
 
 
         public class MyPayRate
@@ -373,7 +427,7 @@ namespace MobiTme.Web.Member.Tiles.PayRules
 
 
 
-         
+
 
         [System.Web.Services.WebMethod]
         public static string deletePayRates(MyPayRate myyPayRate)

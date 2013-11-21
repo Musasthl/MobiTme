@@ -589,6 +589,32 @@
 
 
             } else {
+
+                if (index == 5) {
+                    if ($("#HiddenFieldKey").val().trim() == "") {
+
+                        alert("Please save pay rule data before proceeding to bracketing.");
+                        return false;
+                    }
+
+                }else 
+                if (index == 6) {
+                    if ($("#HiddenFieldKey").val().trim() == "") {
+
+                        alert("Please save pay rule data before proceeding to pay rates.");
+                        return false;
+                    }
+
+                } else
+                    if (index == 7) {
+                        if ($("#HiddenFieldKey").val().trim() == "") {
+
+                            alert("Please save pay rule data before proceeding to shift allowance.");
+                            return false;
+                        }
+
+                    }
+
                 $("#liList").css("display", "");
                 //$("#liEdit").css("display", "");
                 $("#liSave").css("display", "");
@@ -602,11 +628,11 @@
                 $(".divDetail :input").css("border", "2px ");
                 $(".divDetail :input").css("background-color", "white");
 
-                //if (index == 5) {
+                if (index == 5) {
 
-                //    listPayBracketing();
+                    listPayBracketing();
 
-                //}else 
+                }else 
 
                 if (index == 6) {
                     payRateList();
